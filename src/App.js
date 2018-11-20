@@ -16,7 +16,7 @@ class App extends Component {
 		}
 	}
   componentDidMount() {
-    fetch("https://collectionapi.metmuseum.org/public/collection/v1/objects/204503")
+    fetch("http://localhost:5000/11676")
         .then(res => res.json())
             .then(
                 (result) => {
@@ -38,9 +38,9 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <img src={this.state.item.primaryImage} className="App-logo" alt="primaryImage" />
+          <img src={this.state.item.primary_image} className="App-logo" alt="primaryImage" />
 					<h1 className="Item-title">{this.state.item.title}</h1>
-					<h2 className="Item-artist">{this.state.item.artistDisplayName}</h2>
+					<h2 className="Item-artist">{this.state.item.artist}</h2>
                                         <h3 className="Item-medium">{this.state.item.medium}</h3>
         </header>
       </div>
