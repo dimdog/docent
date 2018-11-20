@@ -18,7 +18,7 @@ class App extends Component {
 		}
 	}
   componentDidMount() {
-    fetch("https://collectionapi.metmuseum.org/public/collection/v1/objects/204503")
+    fetch("http://localhost:5000/11676")
         .then(res => res.json())
             .then(
                 (result) => {
