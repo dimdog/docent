@@ -4,6 +4,10 @@ import listen from './img/Listen@3x.png';
 import save from './img/Save.png';
 import './App.css';
 import Gallery from 'react-grid-gallery';
+import Met from './img/Met-logo.png';
+import Angle_BR from './img/Angle_BR.png';
+import Angle_TL from './img/Angle_TL.png';
+import next from './img/next.png';
 
 
 function tile(props){
@@ -115,4 +119,43 @@ class App extends Component {
   }
 }
 
-export default App;
+class Welcome extends Component {
+
+  render() {
+    return (
+      <div className ="View-container">
+      <div className="Welcome">
+      <div className="Angle-TL"><img src={Angle_TL} className="Angle-TL" width="100" alt="bracket">
+      </img>
+        </div>
+      <div className="Met-logo"><img src={Met} className="Met-logo" width="183px" alt="Met-logo">
+        </img>
+        </div>
+        <div className="Angle-BR"><img src={Angle_BR} className="Angle-BR" width="100" alt="bracket">
+        </img>
+          </div>
+          <div className="Title-text">Virtual Docent</div>
+          <div className="Subtitle-text">Scan and <br/> Save Art.</div>
+          <div className="Next-button"><a href="#"><img src={next} width="80" alt="Next-button"/></a></div>
+        </div>
+
+        </div>
+    );
+  }
+}
+
+class Camera extends Component {
+
+  render() {
+    return (
+      <div className ="View-container">
+      <div className="Allow-camera">
+          <div><a href="#"className="back">back</a></div>
+          <div className="Intro-text">Allow camera access to start scanning</div>
+</div>
+        </div>
+    );
+  }
+}
+
+export default Camera;

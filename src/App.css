@@ -64,7 +64,7 @@ p{
 .Grid-container {
   display: grid;
   grid-template-columns: auto auto auto auto;
-  padding-bottom: 10px;
+  padding-bottom: 10px
 }
 
 .Item-description{
@@ -83,7 +83,7 @@ p{
   grid-column: 1/4;
 }
 
-.Item-artist{
+.Item-artist, .Credit-line{
   text-align: left;
   font-family: sans-serif;
   padding-left: 16px;
@@ -92,11 +92,92 @@ p{
   grid-column: 1/4;
 }
 
+
 .App-header {
   background-color: #ffffff;
   font-size: calc(10px + 2vmin);
   color: #333333;
   margin: -8px;
+}
+
+.View-container{
+  background-color: #EB222A;
+  width: 100vmin;
+
+}
+
+.Welcome, .Allow-camera {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  padding-bottom: 20vmin;
+
+
+
+}
+
+.Angle-TL{
+  padding-top: 20px;
+  padding-left: 16px;
+  padding-bottom: 20px;
+  grid-row:1;
+  grid-column: 2/2;
+
+}
+
+.Angle-BR{
+  padding-top: 20px;
+  padding-right: 16px;
+  grid-row: 4;
+  grid-column: 4/4;
+
+}
+
+.Met-logo{
+  grid-row: 2;
+  grid-column: 3/3;
+}
+
+.Title-text, .Intro-text{
+  padding-top: 50px;
+  padding-left: 24px;
+  grid-row:5;
+  grid-column: 2/4;
+  color: #6B172E;
+  font-weight: bold;
+  font-size: 37px;
+  font-family: sans-serif;
+}
+
+.Subtitle-text{
+  grid-row:6;
+  grid-column: 2/4;
+  padding-top: 32px;
+  padding-left: 24px;
+  color: #A7182F;
+  font-weight: bold;
+  font-size: 37px;
+  font-family: sans-serif;
+}
+
+.Next-button{
+  grid-row:6;
+  grid-column: 4/4;
+
+}
+
+.Allow-camera{
+  padding-top: 24px;
+}
+
+.back{
+  grid-row: 1;
+  grid-column: 3/4;
+  font-size: 17px;
+  font-weight: bold;
+  color: #6B172E;
+  font-family: sans-serif;
+  text-decoration: none;
+  padding-left: 24px;
 }
 
 .App-link {
