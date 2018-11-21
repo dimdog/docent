@@ -10,6 +10,59 @@ function tile(props){
     return <img src={props.src} alt={props.alt} className="tile" />; // TODO need to encode id in here as href
 }
 
+function galItemfromItem(item){
+    return {
+        src: item.primary_image,
+        thumbnail: item.primary_image,
+        thumbnailWidth: 320, // TOOO
+        thumbnailHeight: 212, // TODO
+        caption: item.title,
+        objectId: item.id
+    }
+}
+
+function tileClick(){
+    console.log(this.state);
+}
+
+class Highlights extends Component {
+
+    constructor(props) {
+            super(props);
+            this.state = {
+                    error: null,
+                    isLoaded: false,
+                    items: []
+            }
+    }
+    componentDidMount() {
+        fetch("https://virtual-docent.herokuapp.com/")
+            .then(res => res.json())
+                .then(
+                    (result) => {
+                        var items = [];
+                        result.items.forEach(function(item){
+                            console.log(item);
+                            items.push(galItemfromItem(item));
+                        });
+                        console.log(items);
+                        this.setState({
+                                isLoaded: true,
+                                items: items
+                        });
+                    },
+                    (error) => {
+                        this.setState({
+                                isLoaded: true,
+                                error
+                    });
+            }
+        )
+    }
+    render() {
+        return <Gallery images={this.state.items} onSelectImage={tileClick} enableLightbox="false" />
+    }
+}
 class App extends Component {
 	constructor(props) {
 		super(props);
