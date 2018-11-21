@@ -20,7 +20,7 @@ class App extends Component {
 		}
 	}
   componentDidMount() {
-    fetch("http://localhost:5000/11582")
+    fetch("https://virtual-docent.herokuapp.com/64")
         .then(res => res.json())
             .then(
                 (result) => {
