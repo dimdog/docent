@@ -185,11 +185,13 @@ p{
 
 .Allow-access-button{
   grid-row: 3;
-  grid-column: 2 / 4;
+  grid-column: 2/4;
   margin-top: 90vmin;
-  width: 30vmin;
+  width: 60vmin;
   background-color: #ffffff;
-  padding: 21px 50px 21px 50px;
+  text-align: center;
+  padding-top: 21px;
+  padding-bottom: 21px;
   font-weight: bold;
   font-size: 22px;
   font-family: sans-serif;
