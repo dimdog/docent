@@ -103,6 +103,7 @@ p{
 .View-container{
   background-color: #EB222A;
   width: 100vmin;
+  margin: -8px;
 
 }
 
@@ -137,15 +138,25 @@ p{
   grid-column: 3/3;
 }
 
-.Title-text, .Intro-text{
-  padding-top: 50px;
-  padding-left: 24px;
-  grid-row:5;
-  grid-column: 2/4;
+.Title-text, .Intro-text {
   color: #6B172E;
   font-weight: bold;
   font-size: 37px;
   font-family: sans-serif;
+}
+
+.Title-text{
+  padding-top: 50px;
+  padding-left: 24px;
+  grid-column: 2/4;
+}
+
+.Intro-text{
+  padding-top: 50px;
+  padding-left: 50px;
+  padding-right: 50px;
+  grid-row: 2;
+  grid-column: 1/4;
 }
 
 .Subtitle-text{
@@ -167,6 +178,30 @@ p{
 
 .Allow-camera{
   padding-top: 24px;
+  grid-row: 2;
+
+
+}
+
+.Allow-access-button{
+  grid-row: 3;
+  grid-column: 2 / 4;
+  margin-top: 90vmin;
+  width: 30vmin;
+  background-color: #ffffff;
+  padding: 21px 50px 21px 50px;
+  font-weight: bold;
+  font-size: 22px;
+  font-family: sans-serif;
+  border-radius: 34px;
+  box-shadow: 0px 12px 12px 0px rgba(0,0,0,.24);
+
+}
+
+a:link{
+  text-decoration: none;
+
+
 }
 
 .back{

@@ -146,7 +146,7 @@ class Welcome extends Component {
   }
 }
 
-class Camera extends Component {
+class CameraPermission extends Component {
     activateCamera (){
       this.setState({camera: true});
     }
@@ -157,26 +157,29 @@ class Camera extends Component {
             camera: false
         }
         this.activateCamera = this.activateCamera.bind(this);
-
     }
-  render() {
+    render() {
       var displayTag = "";
       console.log(this.state);
       if (!this.state.camera){
           console.log(this.activateCamera);
-          displayTag = <div className="Intro-text" onClick={this.activateCamera} >Allow camera access to start scanning</div>;
+          return [<div className="Intro-text">Allow camera access to start scanning</div>,
+          <div className="Allow-access-button"><a href="#"> Allow Access </a> </div>];
       }
       else{
-          displayTag = <Webcam />;
+          return <Webcam />;
       }
-
+    }
+}
+class Camera extends Component {
+  render() {
     return (
-      [<div className ="View-container">
-          <div className="Allow-camera">
-              <div><a href="#"className="back">back</a></div>,
-              {displayTag},
-          </div>
-      </div>]
+      <div className ="View-container">
+      <div className="Allow-camera">
+          <div><a href="#"className="back">back</a></div>
+          <CameraPermission />
+</div>
+        </div>
     );
   }
 }
