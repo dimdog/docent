@@ -8,6 +8,8 @@ import Met from './img/Met-logo.png';
 import Angle_BR from './img/Angle_BR.png';
 import Angle_TL from './img/Angle_TL.png';
 import next from './img/next.png';
+import Webcam from "react-webcam";
+
 
 
 function tile(props){
@@ -145,15 +147,36 @@ class Welcome extends Component {
 }
 
 class Camera extends Component {
+    activateCamera (){
+      this.setState({camera: true});
+    }
+    constructor(props) {
+        super(props);
+        this.state = {
+            error: null,
+            camera: false
+        }
+        this.activateCamera = this.activateCamera.bind(this);
 
+    }
   render() {
+      var displayTag = "";
+      console.log(this.state);
+      if (!this.state.camera){
+          console.log(this.activateCamera);
+          displayTag = <div className="Intro-text" onClick={this.activateCamera} >Allow camera access to start scanning</div>;
+      }
+      else{
+          displayTag = <Webcam />;
+      }
+
     return (
-      <div className ="View-container">
-      <div className="Allow-camera">
-          <div><a href="#"className="back">back</a></div>
-          <div className="Intro-text">Allow camera access to start scanning</div>
-</div>
-        </div>
+      [<div className ="View-container">
+          <div className="Allow-camera">
+              <div><a href="#"className="back">back</a></div>,
+              {displayTag},
+          </div>
+      </div>]
     );
   }
 }
