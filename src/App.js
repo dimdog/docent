@@ -195,8 +195,6 @@ class CameraPage extends Component {
   }
 }
 
-<<<<<<< HEAD
-
 const AppRouter = () => (
   <Router>
 	<div>
