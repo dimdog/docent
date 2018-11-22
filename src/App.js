@@ -12,11 +12,6 @@ import QrReader from "react-qr-reader";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 
-
-function tile(props){
-    return <img src={props.src} alt={props.alt} className="tile" />; // TODO need to encode id in here as href
-}
-
 function galItemfromItem(item){
     return {
         src: item.primary_image,
@@ -24,16 +19,15 @@ function galItemfromItem(item){
         thumbnailWidth: 320, // TOOO
         thumbnailHeight: 212, // TODO
         caption: item.title,
-        objectId: item.id
+        id: item.id
     }
 }
 
-function tileClick(){
-    console.log(this.state);
-}
 
 class Highlights extends Component {
-
+    tileClick (index){
+        this.props.history.push('/object/'+this.state.items[index].id)
+    }
     constructor(props) {
             super(props);
             this.state = {
@@ -41,6 +35,7 @@ class Highlights extends Component {
                     isLoaded: false,
                     items: []
             }
+            this.tileClick = this.tileClick.bind(this);
     }
     componentDidMount() {
         fetch("https://virtual-docent.herokuapp.com/")
@@ -49,10 +44,8 @@ class Highlights extends Component {
                     (result) => {
                         var items = [];
                         result.items.forEach(function(item){
-                            console.log(item);
                             items.push(galItemfromItem(item));
                         });
-                        console.log(items);
                         this.setState({
                                 isLoaded: true,
                                 items: items
@@ -67,24 +60,28 @@ class Highlights extends Component {
         )
     }
     render() {
-        return <Gallery images={this.state.items} onSelectImage={tileClick} enableLightbox="false" />
+        return <Gallery images={this.state.items} onClickThumbnail={this.tileClick} />
     }
 }
 class ObjectPage extends Component {
 	constructor(props) {
 		super(props);
+                var id = props.id;
+                if (props.match && props.match.params){
+                    id = props.match.params.id || props.id || 0;
+                }
 		this.state = {
 			error: null,
 			isLoaded: false,
+                        id: id,
 			item: {}
 		}
 	}
   componentDidMount() {
-    fetch("https://virtual-docent.herokuapp.com/64")
+    fetch("https://virtual-docent.herokuapp.com/"+this.state.id)
         .then(res => res.json())
             .then(
                 (result) => {
-                    console.log(result);
 
                     this.setState({
                             isLoaded: true,
@@ -162,11 +159,9 @@ class Camera extends Component {
         this.handleScan = this.handleScan.bind(this);
     }
     handleScan(data) {
-        if (data) {
-          this.setState({
-            result: data,
-            camera: true
-          });
+        if (data && data.split("/").length > 0){
+            this.setState({camera: true, result:data.split("/").pop()});
+            this.props.history.push('/object/'+data.split("/").pop())
         }
     }
     render() {
@@ -177,7 +172,7 @@ class Camera extends Component {
       else{
           return (<div className="Camera-View">
           <div className="Camera-intro">Scan the QRcode on the art placard
-          <QrReader onScan={this.handleScan} className="Scan-area"/></div>
+          <QrReader onScan={this.handleScan} className="Scan-area"/></div>{this.state.result}
             </div>);
       }
     }
@@ -187,8 +182,8 @@ class CameraPage extends Component {
     return (
       <div className ="View-container">
       <div className="Allow-camera">
-          <div><a href="#"className="back">back</a></div>
-          <Camera />
+          <div><a href="#"className="back" >back</a></div>
+          <Camera history={this.props.history}/>
 </div>
         </div>
     );
@@ -201,7 +196,7 @@ const AppRouter = () => (
       <Route path="/" exact component={Welcome} />
       <Route path="/camera" exact component={CameraPage} />
       <Route path="/highlights/" component={Highlights} />
-      <Route path="/object/:id/" component={ObjectPage} />
+      <Route path="/object/:id" component={ObjectPage} />
 	</div>
   </Router>
 );
