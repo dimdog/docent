@@ -103,7 +103,7 @@ class ObjectPage extends Component {
         <div className="Grid-container">
           <img src={this.state.item.primary_image} className="Primary-image" alt="primaryImage" />
 					<h1 className="Item-title">{this.state.item.title}</h1>
-          <a className="Item-year" href = "#"> 1994</a>
+          <a className="Item-year" href = "#">{this.state.item.obj_date}</a>
           <div className="Button-bar">
              <a href = "#"><img src={listen} className="Button-listen" width="40px" alt="listen" /></a>
              <a href = "#" ><img src={save} className="Button-save" width ="40px" alt="save"/></a></div>
