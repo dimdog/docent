@@ -170,9 +170,9 @@ class Camera extends Component {
           <div className="Allow-access-button"><a onClick={this.activateCamera} href="#"> Allow Access </a> </div>];
       }
       else{
-          return (<div className="Camera-View">
-          <div className="Camera-intro">Scan the QRcode on the art placard
-          <QrReader onScan={this.handleScan} className="Scan-area"/></div>{this.state.result}
+          return (<div className="Camera-view">
+          <div className="Camera-intro">Scan the QRcode on the art placard</div>
+          <QrReader onScan={this.handleScan} className="Scan-area"/>
             </div>);
       }
     }
