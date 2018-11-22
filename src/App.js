@@ -166,7 +166,7 @@ class CameraPermission extends Component {
           <div className="Allow-access-button"><a onClick={this.activateCamera} href="#"> Allow Access </a> </div>];
       }
       else{
-          return <Webcam />;
+          return <Webcam className="Camera-View"/>;
       }
     }
 }
