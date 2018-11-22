@@ -40,12 +40,16 @@ p{
 }
 
 .Primary-image {
-  background-clip:content-box;
-  background-size: contain;
   width: 100%;
-  max-height: 90vmin;
   grid-column: 1/4;
-  padding-bottom: 20px
+  padding-bottom: 20px;
+
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 
 }
 
