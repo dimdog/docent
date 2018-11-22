@@ -9,6 +9,8 @@ import Angle_BR from './img/Angle_BR.png';
 import Angle_TL from './img/Angle_TL.png';
 import next from './img/next.png';
 import QrReader from "react-qr-reader";
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+
 
 
 function tile(props){
@@ -68,7 +70,7 @@ class Highlights extends Component {
         return <Gallery images={this.state.items} onSelectImage={tileClick} enableLightbox="false" />
     }
 }
-class App extends Component {
+class ObjectPage extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
@@ -137,7 +139,7 @@ class Welcome extends Component {
           </div>
           <div className="Title-text">Virtual Docent</div>
           <div className="Subtitle-text">Scan and <br/> Save Art.</div>
-          <div className="Next-button"><a href="#"><img src={next} width="80" alt="Next-button"/></a></div>
+          <div className="Next-button"><Link to="/camera"><img src={next} width="80" alt="Next-button"/></Link></div>
         </div>
 
         </div>
@@ -190,4 +192,16 @@ class CameraPage extends Component {
   }
 }
 
-export default Camera;
+
+const AppRouter = () => (
+  <Router>
+	<div>
+      <Route path="/" exact component={Welcome} />
+      <Route path="/camera" exact component={CameraPage} />
+      <Route path="/highlights/" component={Highlights} />
+      <Route path="/object/:id/" component={ObjectPage} />
+	</div>
+  </Router>
+);
+
+export default AppRouter;
