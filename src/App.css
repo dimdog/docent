@@ -185,9 +185,11 @@ p{
 
 .Allow-access-button{
   grid-row: 3;
-  grid-column: 2/4;
-  margin-top: 90vmin;
-  width: 60vmin;
+  grid-column: 1/ span 4;
+  align-content: center;
+  margin-top: 70vmin;
+  margin-left: 65px;
+  margin-right: 65px;
   background-color: #ffffff;
   text-align: center;
   padding-top: 21px;
@@ -202,6 +204,7 @@ p{
 
 a:link{
   text-decoration: none;
+  color: #333333;
 
 
 }
@@ -215,6 +218,7 @@ a:link{
   font-family: sans-serif;
   text-decoration: none;
   padding-left: 24px;
+
 }
 
 .App-link {
