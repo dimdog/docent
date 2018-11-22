@@ -162,9 +162,8 @@ class CameraPermission extends Component {
       var displayTag = "";
       console.log(this.state);
       if (!this.state.camera){
-          console.log(this.activateCamera);
           return [<div className="Intro-text">Allow camera access to start scanning</div>,
-          <div className="Allow-access-button"><a href="#"> Allow Access </a> </div>];
+          <div className="Allow-access-button"><a onClick={this.activateCamera} href="#"> Allow Access </a> </div>];
       }
       else{
           return <Webcam />;
