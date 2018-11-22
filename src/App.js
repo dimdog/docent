@@ -182,7 +182,7 @@ class CameraPage extends Component {
     return (
       <div className ="View-container">
       <div className="Allow-camera">
-          <div><a href="#"className="back" >back</a></div>
+          <div><Link to="/" className="back" >back</Link></div>
           <Camera history={this.props.history}/>
 </div>
         </div>
