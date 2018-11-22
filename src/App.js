@@ -201,4 +201,4 @@ const AppRouter = () => (
   </Router>
 );
 
-export default Highlights;
+export default AppRouter;
