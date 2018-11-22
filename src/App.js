@@ -145,7 +145,7 @@ class Welcome extends Component {
   }
 }
 
-class CameraPermission extends Component {
+class Camera extends Component {
     activateCamera (){
       this.setState({camera: true, result: null});
     }
@@ -157,10 +157,10 @@ class CameraPermission extends Component {
             result: null
         }
         this.activateCamera = this.activateCamera.bind(this);
+        this.handleScan = this.handleScan.bind(this);
     }
     handleScan(data) {
         if (data) {
-          console.log("DATA"+data);
           this.setState({
             result: data,
             camera: true
@@ -168,24 +168,22 @@ class CameraPermission extends Component {
         }
     }
     render() {
-      var displayTag = "";
-      console.log(this.state);
       if (!this.state.camera){
           return [<div className="Intro-text">Allow camera access to start scanning</div>,
           <div className="Allow-access-button"><a onClick={this.activateCamera} href="#"> Allow Access </a> </div>];
       }
       else{
-          return <QrReader className="Camera-View"/>;
+          return <QrReader onScan={this.handleScan} className="Camera-View"/>;
       }
     }
 }
-class Camera extends Component {
+class CameraPage extends Component {
   render() {
     return (
       <div className ="View-container">
       <div className="Allow-camera">
           <div><a href="#"className="back">back</a></div>
-          <CameraPermission />
+          <Camera />
 </div>
         </div>
     );
