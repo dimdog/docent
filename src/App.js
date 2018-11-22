@@ -16,8 +16,8 @@ function galItemfromItem(item){
     return {
         src: item.primary_image,
         thumbnail: item.primary_image,
-        thumbnailWidth: 320, // TOOO
-        thumbnailHeight: 212, // TODO
+        thumbnailWidth: 500, // TOOO
+        thumbnailHeight: 500, // TODO
         caption: item.title,
         id: item.id
     }
@@ -60,7 +60,7 @@ class Highlights extends Component {
         )
     }
     render() {
-        return <Gallery images={this.state.items} onClickThumbnail={this.tileClick} />
+        return <Gallery images={this.state.items} className="Gallery" onClickThumbnail={this.tileClick} />
     }
 }
 class ObjectPage extends Component {
@@ -201,4 +201,4 @@ const AppRouter = () => (
   </Router>
 );
 
-export default AppRouter;
+export default Highlights;

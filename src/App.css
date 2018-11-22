@@ -50,8 +50,14 @@ p{
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-
 }
+
+.Gallery {
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  }
 
 .Item-title{
   font-style: "bold";
