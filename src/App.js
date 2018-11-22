@@ -8,8 +8,7 @@ import Met from './img/Met-logo.png';
 import Angle_BR from './img/Angle_BR.png';
 import Angle_TL from './img/Angle_TL.png';
 import next from './img/next.png';
-import Webcam from "react-webcam";
-
+import QrReader from "react-qr-reader";
 
 
 function tile(props){
@@ -148,15 +147,25 @@ class Welcome extends Component {
 
 class CameraPermission extends Component {
     activateCamera (){
-      this.setState({camera: true});
+      this.setState({camera: true, result: null});
     }
     constructor(props) {
         super(props);
         this.state = {
             error: null,
-            camera: false
+            camera: false,
+            result: null
         }
         this.activateCamera = this.activateCamera.bind(this);
+    }
+    handleScan(data) {
+        if (data) {
+          console.log("DATA"+data);
+          this.setState({
+            result: data,
+            camera: true
+          });
+        }
     }
     render() {
       var displayTag = "";
@@ -166,7 +175,7 @@ class CameraPermission extends Component {
           <div className="Allow-access-button"><a onClick={this.activateCamera} href="#"> Allow Access </a> </div>];
       }
       else{
-          return <Webcam className="Camera-View"/>;
+          return <QrReader className="Camera-View"/>;
       }
     }
 }
