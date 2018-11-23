@@ -43,6 +43,7 @@ p{
   width: 100%;
   grid-column: 1/4;
   padding-bottom: 20px;
+  border-style: none;
 
 
     /* Create the parallax scrolling effect */
