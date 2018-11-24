@@ -115,7 +115,7 @@ class ObjectPage extends Component {
           </div>
         </header>
         <footer>
-        <div class="languages"><a class = "english">english</a></div>
+        <div class="languages"><a href="#" class = "english">🇺🇸 english</a><a href="#" class = "dutch">🇳🇱 dutch</a></div>
         </footer>
       </div>
     );
