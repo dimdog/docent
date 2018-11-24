@@ -198,12 +198,13 @@ class Camera extends Component {
     render() {
       if (!this.state.camera){
           return [<div className="Intro-text">Allow camera access to start scanning</div>,
-          <div className="Allow-access-button"><a onClick={this.activateCamera} href="#"> Allow Access </a> </div>];
+          <a className="Allow-access-button" href="#" onClick={this.activateCamera}> Allow Access </a>];
       }
       else{
           return (<div className="Camera-view">
-          <div className="Camera-intro">Scan the QRcode on the art placard</div>
-          <QrReader onScan={this.handleScan} className="Scan-area"/>
+
+          <div className="Intro-text">Scan the QRcode on the art placard</div>
+          <div className="Scan-area"><QrReader onScan={this.handleScan}></QrReader></div>
             </div>);
       }
     }
