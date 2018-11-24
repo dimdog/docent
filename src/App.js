@@ -10,6 +10,7 @@ import Angle_TL from './img/Angle_TL.png';
 import next from './img/next.png';
 import QrReader from "react-qr-reader";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import GoogleLogin from 'react-google-login';
 
 
 function galItemfromItem(item){
