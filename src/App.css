@@ -216,6 +216,28 @@ a:link{
   color: #333333;
 }
 
+a:hover, a:visited{
+  font-weight: bolder;
+  color:#333333;
+}
+
+
+.languages{
+  grid-row: 5;
+  grid-column: 1;
+  padding-left:10px;
+  padding-right: 10px;
+  font-variant: small-caps;
+  font-family: sans-serif;
+  font-weight: regular;
+  background-color: #fafafa;
+
+}
+
+.english{
+  margin-right: 15px;
+}
+
 .Camera-view{
   padding-top: 50px;
   background-color: #EB222A;
