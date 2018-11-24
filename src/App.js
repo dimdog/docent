@@ -73,10 +73,21 @@ class ObjectPage extends Component {
 		this.state = {
 			error: null,
 			isLoaded: false,
+                        language: "EN",
                         id: id,
 			item: {}
 		}
+                this.getPropForLanguage = this.getPropForLanguage.bind(this);
 	}
+
+  getPropForLanguage(prop){
+      console.log("-------");
+      console.log(this.state.item);
+      if (this.state.item && this.state.item.languages){
+        return this.state.item.languages[this.state.language][prop];
+      }
+      return prop;
+  }
   componentDidMount() {
     fetch("https://virtual-docent.herokuapp.com/"+this.state.id)
         .then(res => res.json())
@@ -85,7 +96,9 @@ class ObjectPage extends Component {
 
                     this.setState({
                             isLoaded: true,
-                            item: result
+                            item: result,
+                            language: this.state.language,
+                            id: this.state.id
                     });
                 },
                 (error) => {
@@ -102,16 +115,15 @@ class ObjectPage extends Component {
         <header className="App-header">
         <div className="Grid-container">
           <img src={this.state.item.primary_image} className="Primary-image" alt="primaryImage" />
-					<h1 className="Item-title">{this.state.item.title}</h1>
+					<h1 className="Item-title">{this.getPropForLanguage('title')}</h1>
           <a className="Item-year" href = "#">{this.state.item.obj_date}</a>
           <div className="Button-bar">
              <a href = "#"><img src={listen} className="Button-listen" width="40px" alt="listen" /></a>
              <a href = "#" ><img src={save} className="Button-save" width ="40px" alt="save"/></a></div>
-          <p className="Item-medium">{this.state.item.medium}</p>
+          <p className="Item-medium">{this.getPropForLanguage('medium')}</p>
           <div className="skinny-break"></div>
           <p className="Item-artist">{this.state.item.artist}</p>
-          <p className="Item-description">Bourgeois, who grew up in a family of five and built her own family of five as an adult, constructed this quintet of spiders from salvaged metal parts and stock rods of steel. The size and materials lend the work of an industrial, futuristic feel. The artist often emphasized the contrast between the sculptural value of spiders’ bodies and the spindly lengths of their legs; she likened these limbs to drawn lines, and drawing itself to spinning a web: “What is a drawing? It is a secretion, like the thread in a spider’s web… It is knitting, a spiral, a spider web and other significant organizations of space.”
-          </p>
+          <p className="Item-description">{this.getPropForLanguage('description')}</p>
           </div>
         </header>
         <footer>
