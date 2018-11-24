@@ -78,15 +78,31 @@ class ObjectPage extends Component {
 			item: {}
 		}
                 this.getPropForLanguage = this.getPropForLanguage.bind(this);
+                this.changetoEn = this.changetoEn.bind(this);
+                this.changetoNl = this.changetoNl.bind(this);
 	}
 
   getPropForLanguage(prop){
-      console.log("-------");
-      console.log(this.state.item);
       if (this.state.item && this.state.item.languages){
         return this.state.item.languages[this.state.language][prop];
       }
       return prop;
+  }
+  changetoEn(){
+      this.setState({
+        isLoaded: true,
+        item: this.state.item,
+        language: "EN",
+        id: this.state.id
+      })
+  }
+  changetoNl(){
+      this.setState({
+        isLoaded: true,
+        item: this.state.item,
+        language: "NL",
+        id: this.state.id
+      })
   }
   componentDidMount() {
     fetch("https://virtual-docent.herokuapp.com/"+this.state.id)
@@ -127,7 +143,7 @@ class ObjectPage extends Component {
           </div>
         </header>
         <footer>
-        <div class="languages"><a href="#" class = "english">🇺🇸 english</a><a href="#" class = "dutch">🇳🇱 dutch</a></div>
+        <div className="languages"><a href="#" onClick={this.changetoEn} className = "english">🇺🇸 english</a><a href="#" onClick={this.changetoNl} className = "dutch">🇳🇱 dutch</a></div>
         </footer>
       </div>
     );
