@@ -116,8 +116,8 @@ class ObjectPage extends Component {
             <GoogleLogin
                 buttonText="Login With Google"
                 clientId="633799705698-fs81n284e1iv4318fk2vdclksv29d82e.apps.googleusercontent.com"
-                onSuccess={GoogleLogin}
-                onFailure={GoogleLogin}
+                onSuccess={this.googleLogin}
+                onFailure={this.googleLogin}
             />
 
           </Modal>
