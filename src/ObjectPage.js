@@ -4,6 +4,17 @@ import save from './img/Save.png';
 import GoogleLogin from 'react-google-login';
 import Modal from 'react-modal';
 
+const customStyles = {
+  content : {
+    top                   : '50%',
+    left                  : '50%',
+    right                 : 'auto',
+    bottom                : 'auto',
+    marginRight           : '-50%',
+    transform             : 'translate(-50%, -50%)'
+  }
+};
+
 class ObjectPage extends Component {
 	constructor(props) {
 		super(props);
@@ -16,11 +27,16 @@ class ObjectPage extends Component {
 			isLoaded: false,
                         language: "EN",
                         id: id,
-			item: {}
+			item: {},
+                        modalIsOpen: false,
+                        loggedIn: false
 		}
                 this.getPropForLanguage = this.getPropForLanguage.bind(this);
                 this.changetoEn = this.changetoEn.bind(this);
                 this.changetoNl = this.changetoNl.bind(this);
+                this.closeModal = this.closeModal.bind(this);
+                this.openModal = this.openModal.bind(this);
+
 	}
 
   getPropForLanguage(prop){
@@ -31,19 +47,25 @@ class ObjectPage extends Component {
   }
   changetoEn(){
       this.setState({
-        isLoaded: true,
-        item: this.state.item,
-        language: "EN",
-        id: this.state.id
-      })
+        language: "EN"
+      });
   }
   changetoNl(){
       this.setState({
-        isLoaded: true,
-        item: this.state.item,
-        language: "NL",
-        id: this.state.id
-      })
+        language: "NL"
+      });
+  }
+  openModal(){
+      if (!this.state.loggedIn){
+          this.setState({
+            modalIsOpen: true
+          });
+      }
+  }
+  closeModal(){
+      this.setState({
+        modalIsOpen: false
+      });
   }
   componentDidMount() {
     fetch("https://virtual-docent.herokuapp.com/"+this.state.id)
@@ -54,7 +76,6 @@ class ObjectPage extends Component {
                     this.setState({
                             isLoaded: true,
                             item: result,
-                            language: this.state.language,
                             id: this.state.id
                     });
                 },
@@ -66,6 +87,7 @@ class ObjectPage extends Component {
                 }
             )
   }
+
   render() {
     return (
       <div className="App">
@@ -76,12 +98,20 @@ class ObjectPage extends Component {
           <a className="Item-year" href = "#">{this.state.item.obj_date}</a>
           <div className="Button-bar">
              <a href = "#"><img src={listen} className="Button-listen" width="40px" alt="listen" /></a>
-             <GoogleLogin /><a href = "#" ><img src={save} className="Button-save" width ="40px" alt="save"/><div className="Save-modal"></div></a></div>
+             <a href = "#" ><img src={save} onClick={this.openModal} className="Button-save" width ="40px" alt="save"/><div className="Save-modal"></div></a></div>
           <p className="Item-medium">{this.getPropForLanguage('medium')}</p>
           <div className="skinny-break"></div>
           <p className="Item-artist">{this.state.item.artist}</p>
           <p className="Item-description">{this.getPropForLanguage('description')}</p>
           </div>
+          <Modal
+          isOpen={this.state.modalIsOpen}
+          onRequestClose={this.closeModal}
+          style={customStyles}
+          contentLabel="Login Modal">
+            <GoogleLogin />
+
+          </Modal>
         </header>
         <footer>
         <div className="languages"><a href="#" onClick={this.changetoEn} className = "english">🇺🇸 english</a><a href="#" onClick={this.changetoNl} className = "dutch">🇳🇱 dutch</a></div>
