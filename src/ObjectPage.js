@@ -41,7 +41,23 @@ class ObjectPage extends Component {
 	}
 
   googleLogin(data){
-      console.log(arguments);
+      console.log(data);
+      var post_data = {
+          first_name: data.ProfileObj.givenName,
+          last_name: data.ProfileObj.familyName,
+          email: data.ProfileObj.email,
+          image_url: data.ProfileObj.imageUrl,
+          accessToken: data.accessToken
+      }
+      console.log(post_data)
+      fetch('https://virtual-docent.herokuapp.com/login', {
+          method: 'POST',
+          headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(post_data)
+      });
   }
   getPropForLanguage(prop){
       if (this.state.item && this.state.item.languages){
