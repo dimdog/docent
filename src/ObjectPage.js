@@ -36,9 +36,13 @@ class ObjectPage extends Component {
                 this.changetoNl = this.changetoNl.bind(this);
                 this.closeModal = this.closeModal.bind(this);
                 this.openModal = this.openModal.bind(this);
+                this.googleLogin = this.googleLogin.bind(this);
 
 	}
 
+  googleLogin(data){
+      console.log(arguments);
+  }
   getPropForLanguage(prop){
       if (this.state.item && this.state.item.languages){
         return this.state.item.languages[this.state.language][prop];
@@ -109,7 +113,12 @@ class ObjectPage extends Component {
           onRequestClose={this.closeModal}
           style={customStyles}
           contentLabel="Login Modal">
-            <GoogleLogin />
+            <GoogleLogin
+                buttonText="Login With Google"
+                clientId="633799705698-fs81n284e1iv4318fk2vdclksv29d82e.apps.googleusercontent.com"
+                onSuccess={GoogleLogin}
+                onFailure={GoogleLogin}
+            />
 
           </Modal>
         </header>
