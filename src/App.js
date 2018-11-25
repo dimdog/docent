@@ -136,7 +136,7 @@ class ObjectPage extends Component {
           <a className="Item-year" href = "#">{this.state.item.obj_date}</a>
           <div className="Button-bar">
              <a href = "#"><img src={listen} className="Button-listen" width="40px" alt="listen" /></a>
-             <a href = "#" ><img src={save} className="Button-save" width ="40px" alt="save"/></a></div>
+             <a href = "#" ><img src={save} className="Button-save" width ="40px" alt="save"/><div className="Save-modal"><GoogleLogin/></div></a></div>
           <p className="Item-medium">{this.getPropForLanguage('medium')}</p>
           <div className="skinny-break"></div>
           <p className="Item-artist">{this.state.item.artist}</p>

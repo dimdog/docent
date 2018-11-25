@@ -31,6 +31,12 @@ p{
 
 }
 
+.Save-modal{
+  display: none;
+  border-radius: 5px;
+  background-color: #ffffff;
+}
+
 .Item-year{
   font-weight: 400;
   padding-left: 16px;
