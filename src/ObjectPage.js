@@ -47,7 +47,8 @@ class ObjectPage extends Component {
           last_name: data.profileObj.familyName,
           email: data.profileObj.email,
           image_url: data.profileObj.imageUrl,
-          accessToken: data.accessToken
+          accessToken: data.accessToken,
+          tokenId: data.tokenId
       }
       console.log(post_data)
       fetch('https://virtual-docent.herokuapp.com/login', {
