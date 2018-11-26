@@ -41,16 +41,11 @@ class ObjectPage extends Component {
 	}
 
   googleLogin(data){
-      console.log(data);
       var post_data = {
-          first_name: data.profileObj.givenName,
-          last_name: data.profileObj.familyName,
           email: data.profileObj.email,
-          image_url: data.profileObj.imageUrl,
           accessToken: data.accessToken,
           tokenId: data.tokenId
       }
-      console.log(post_data)
       fetch('https://virtual-docent.herokuapp.com/login', {
           method: 'POST',
           headers: {
