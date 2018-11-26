@@ -11,7 +11,7 @@ p{
 }
 
 .Navbar{
-  background-color: #EB222A;
+  background-color: #e4002b;
   display: flex;
   width: 100%;
   position: fixed;
@@ -31,7 +31,7 @@ p{
   padding-left: 50px;
   font-weight: 550;
   font-size: 13pt;
-  color: #6B172E;
+  color: #Fafafa;
 }
 
 .Button-bar{
@@ -285,4 +285,10 @@ a:hover, a:visited{
 
 .App-link {
   color: #61dafb;
+}
+
+.Button-scan{
+  padding-right: 24px;
+  padding-bottom: 24px;
+  position: fixed;
 }

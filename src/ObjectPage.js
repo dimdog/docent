@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
-import listen from './img/Listen@3x.png';
+import listen from './img/Listen.png';
 import save from './img/Save.png';
 import GoogleLogin from 'react-google-login';
 import Modal from 'react-modal';
 import Met from './img/Met-logo.png';
+import Scan from './img/scan.png';
 
 const customStyles = {
   content : {
@@ -144,6 +145,7 @@ class ObjectPage extends Component {
 
           </Modal>
         </header>
+        <div className="Button-scan"><a><img src={Scan} width="60px"></img></a></div>
         <footer>
         <div className="languages"><a href="#" onClick={this.changetoEn} className = "english">🇺🇸 english</a><a href="#" onClick={this.changetoNl} className = "dutch">🇳🇱 dutch</a></div>
         </footer>
