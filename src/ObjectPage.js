@@ -116,7 +116,7 @@ class ObjectPage extends Component {
       <div className="App">
         <header className="App-header">
         <div className="Navbar">
-            <div className="Highlights-button"><a><img src={Met} width="40px" alt="Met-logo"></img></a></div>
+            <div className="Highlights-button"><a><img src={Met} width="40px" alt="Met-logo"></img></a><a className="Profile-img" width="50px"></a></div>
             <div className="App-title">Virtual Docent</div>
         </div>
         <div className="Grid-container">
@@ -136,14 +136,19 @@ class ObjectPage extends Component {
           onRequestClose={this.closeModal}
           style={customStyles}
           contentLabel="Login Modal">
-            <GoogleLogin
-                buttonText="Login With Google"
-                clientId="633799705698-fs81n284e1iv4318fk2vdclksv29d82e.apps.googleusercontent.com"
-                onSuccess={this.googleLogin}
-                onFailure={this.googleLogin}
-            />
-
-          </Modal>
+          <div className="Login-modal">
+            <div className="Modal-title">Save the works <br/> you love.</div>
+              <div><a className="Button-close">Cancel</a>
+                <GoogleLogin
+                    buttonText="Login With Google"
+                    clientId="633799705698-fs81n284e1iv4318fk2vdclksv29d82e.apps.googleusercontent.com"
+                    onSuccess={this.googleLogin}
+                    onFailure={this.googleLogin}
+                    className="Button-login"
+                />
+              </div>
+              </div>
+            </Modal>
         </header>
         <div className="Button-scan"><a><img src={Scan} width="60px"></img></a></div>
         <footer>

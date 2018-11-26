@@ -23,6 +23,10 @@ p{
   padding-top: 9px;
 }
 
+.Profile-img{
+  background-color:
+}
+
 .App-title{
   font-family: sans-serif;
   text-align: center;
@@ -290,5 +294,38 @@ a:hover, a:visited{
 .Button-scan{
   padding-right: 24px;
   padding-bottom: 24px;
-  position: fixed;
+}
+
+.Login-modal{
+  padding: 30px;
+  display: grid;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(0,0,0,.24)
+}
+
+.Modal-title{
+  grid-row: 1;
+  grid-column: 1;
+  font-weight: 550;
+  font-size: 27px;
+  font-family: sans-serif;
+  padding-bottom: 50px;
+}
+
+.Button-close{
+  grid-row: 2;
+  grid-column: 3;
+  text-align: left;
+  font-size: 12px;
+  font-weight: bold;
+  color: #6B172E;
+  font-family: sans-serif;
+  text-decoration: none;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+.Button-login{
+  grid-row:2;
+  grid-column: 4;
 }
