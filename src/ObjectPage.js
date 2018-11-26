@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
-import listen from './img/Listen@3x.png';
+import listen from './img/Listen.png';
 import save from './img/Save.png';
 import GoogleLogin from 'react-google-login';
 import Modal from 'react-modal';
+import Met from './img/Met-logo.png';
+import Scan from './img/scan.png';
 
 const customStyles = {
   content : {
@@ -108,6 +110,10 @@ class ObjectPage extends Component {
     return (
       <div className="App">
         <header className="App-header">
+        <div className="Navbar">
+            <div className="Highlights-button"><a><img src={Met} width="40px" alt="Met-logo"></img></a></div>
+            <div className="App-title">Virtual Docent</div>
+        </div>
         <div className="Grid-container">
           <img src={this.state.item.primary_image} className="Primary-image" alt="primaryImage" />
 					<h1 className="Item-title">{this.getPropForLanguage('title')}</h1>
@@ -134,6 +140,7 @@ class ObjectPage extends Component {
 
           </Modal>
         </header>
+        <div className="Button-scan"><a><img src={Scan} width="60px"></img></a></div>
         <footer>
         <div className="languages"><a href="#" onClick={this.changetoEn} className = "english">🇺🇸 english</a><a href="#" onClick={this.changetoNl} className = "dutch">🇳🇱 dutch</a></div>
         </footer>
