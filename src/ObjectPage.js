@@ -3,6 +3,7 @@ import listen from './img/Listen@3x.png';
 import save from './img/Save.png';
 import GoogleLogin from 'react-google-login';
 import Modal from 'react-modal';
+import Met from './img/Met-logo.png';
 
 const customStyles = {
   content : {
@@ -113,6 +114,10 @@ class ObjectPage extends Component {
     return (
       <div className="App">
         <header className="App-header">
+        <div className="Navbar">
+            <div className="Highlights-button"><a><img src={Met} width="40px" alt="Met-logo"></img></a></div>
+            <div className="App-title">Virtual Docent</div>
+        </div>
         <div className="Grid-container">
           <img src={this.state.item.primary_image} className="Primary-image" alt="primaryImage" />
 					<h1 className="Item-title">{this.getPropForLanguage('title')}</h1>

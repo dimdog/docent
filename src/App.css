@@ -10,6 +10,30 @@ p{
 
 }
 
+.Navbar{
+  background-color: #EB222A;
+  display: flex;
+  width: 100%;
+  position: fixed;
+  box-shadow: 0px 3px 10px rbga(0,0,0,.5);
+}
+
+.Highlights-button{
+  padding-left: 9px;
+  padding-top: 9px;
+}
+
+.App-title{
+  font-family: sans-serif;
+  text-align: center;
+  padding-top: 18px;
+  padding-bottom: 18px;
+  padding-left: 50px;
+  font-weight: 550;
+  font-size: 13pt;
+  color: #6B172E;
+}
+
 .Button-bar{
  grid-row: 2 ;
  grid-column: 3;
