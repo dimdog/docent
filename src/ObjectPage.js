@@ -5,6 +5,8 @@ import GoogleLogin from 'react-google-login';
 import Modal from 'react-modal';
 import Met from './img/Met-logo.png';
 import Scan from './img/scan.png';
+import {Link} from "react-router-dom";
+
 
 
 const customStyles = {
@@ -111,15 +113,19 @@ class ObjectPage extends Component {
     return (
       <div className="App">
         <header className="App-header">
+
+
+        <div className="Grid-container">
         <div className="Navbar">
-            <div className="Highlights-button" onClick={this.Highlights}><a href="#"><img src={Met} width="40px" alt="Met-logo"></img></a><a className="Profile-img" width="50px"></a></div>
+            <Link to="/highlights" className="Highlights-button" onClick={this.Highlights}><a href="#"><img src={Met} width="40px" alt="Met-logo"></img></a><a className="Profile-img" width="50px"></a>
+            </Link>
             <div className="App-title">Virtual Docent</div>
             <div className="Signed-in" onClick=""><a className="Profile-img" width="50px"></a></div>
         </div>
 
-        <div className="Grid-container">
           <img src={this.state.item.primary_image} className="Primary-image" alt="primaryImage" />
-					<h1 className="Item-title">{this.getPropForLanguage('title')}</h1>
+
+          <h1 className="Item-title">{this.getPropForLanguage('title')}</h1>
           <a className="Item-year" href = "#">{this.state.item.obj_date}</a>
           <a className="Button-listen" href = "#"><img src={listen} width="40px" alt="listen" /></a>
           <a className="Button-save" href = "#" ><img src={save} onClick={this.openModal}  width ="40px" alt="save"/><div className="Save-modal"></div></a>
@@ -128,6 +134,7 @@ class ObjectPage extends Component {
           <p className="Item-artist">{this.state.item.artist}</p>
           <p className="Item-description">{this.getPropForLanguage('description')}</p>
           </div>
+
         <div className="Modal-style">
           <Modal
           isOpen={this.state.modalIsOpen}
