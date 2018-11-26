@@ -114,6 +114,7 @@ class ObjectPage extends Component {
             <div className="Highlights-button"><a><img src={Met} width="40px" alt="Met-logo"></img></a><a className="Profile-img" width="50px"></a></div>
             <div className="App-title">Virtual Docent</div>
         </div>
+
         <div className="Grid-container">
           <img src={this.state.item.primary_image} className="Primary-image" alt="primaryImage" />
 					<h1 className="Item-title">{this.getPropForLanguage('title')}</h1>
@@ -126,6 +127,7 @@ class ObjectPage extends Component {
           <p className="Item-artist">{this.state.item.artist}</p>
           <p className="Item-description">{this.getPropForLanguage('description')}</p>
           </div>
+        <div className="Modal-style">
           <Modal
           isOpen={this.state.modalIsOpen}
           onRequestClose={this.closeModal}
@@ -133,7 +135,7 @@ class ObjectPage extends Component {
           contentLabel="Login Modal">
           <div className="Login-modal">
             <div className="Modal-title">Save the works <br/> you love.</div>
-              <div><a className="Button-close">Cancel</a>
+              <div><a onClick={this.closeModal} href="#" className="Button-close">Cancel</a>
                 <GoogleLogin
                     buttonText="Login With Google"
                     clientId="633799705698-fs81n284e1iv4318fk2vdclksv29d82e.apps.googleusercontent.com"
@@ -144,8 +146,10 @@ class ObjectPage extends Component {
               </div>
               </div>
             </Modal>
+          </div>
+
         </header>
-        <div className="Button-scan"><a><img src={Scan} width="60px"></img></a></div>
+        <div className="Button-scan"><a href="#"><img src={Scan} width="80px"></img></a></div>
         <footer>
         <div className="languages"><a href="#" onClick={this.changetoEn} className = "english">🇺🇸 english</a><a href="#" onClick={this.changetoNl} className = "dutch">🇳🇱 dutch</a></div>
         </footer>

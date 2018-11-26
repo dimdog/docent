@@ -24,7 +24,7 @@ p{
 }
 
 .Profile-img{
-  background-color:
+  background-color:#333333;
 }
 
 .App-title{
@@ -74,17 +74,22 @@ p{
 }
 
 .Primary-image {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
   width: 100%;
-  grid-column: 1/4;
+  max-width: 550px;
+  grid-row: 1;
+  grid-column: 1 / span 4;
   padding-bottom: 20px;
   border-style: none;
 
 
-    /* Create the parallax scrolling effect */
+    /* Create the parallax scrolling effect
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: cover;*/
 }
 
 .Gallery {
@@ -292,15 +297,21 @@ a:hover, a:visited{
 }
 
 .Button-scan{
-  padding-right: 24px;
-  padding-bottom: 24px;
+  right: 24px;
+  bottom: 24px;
+  position: fixed;
+}
+
+.Modal-style{
+  display: grid;
+  background-color: none;
 }
 
 .Login-modal{
   padding: 30px;
-  display: grid;
   border-radius: 5px;
-  box-shadow: 0px 0px 10px rgba(0,0,0,.24)
+  box-shadow: 0px 0px 10px rgba(0,0,0,.24);
+
 }
 
 .Modal-title{
