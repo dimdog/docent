@@ -31,7 +31,7 @@ class ObjectPage extends Component {
                     id = props.match.params.id || props.id || 0;
                 }
 		this.state = {
-                        cookies: cookies;
+                        cookies: cookies,
 			error: null,
 			isLoaded: false,
                         language: "EN",
@@ -50,7 +50,7 @@ class ObjectPage extends Component {
 	}
 
   googleLogin(data){
-      this.state.cookies.set("user_token", data.tokenId);
+      this.state.cookies.set("user_token", data.tokenId, {secure:true});
       var post_data = {
           email: data.profileObj.email,
           accessToken: data.accessToken,
