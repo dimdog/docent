@@ -127,9 +127,9 @@ class ObjectPage extends Component {
 
           <h1 className="Item-title">{this.getPropForLanguage('title')}</h1>
           <a className="Item-year" href = "#">{this.state.item.obj_date}</a>
+          <a className="Item-medium">{this.getPropForLanguage('medium')}</a>
           <a className="Button-listen" href = "#"><img src={listen} width="40px" alt="listen" /></a>
           <a className="Button-save" href = "#" ><img src={save} onClick={this.openModal}  width ="40px" alt="save"/><div className="Save-modal"></div></a>
-          <p className="Item-medium">{this.getPropForLanguage('medium')}</p>
           <div className="skinny-break"></div>
           <p className="Item-artist">{this.state.item.artist}</p>
           <p className="Item-description">{this.getPropForLanguage('description')}</p>
@@ -155,7 +155,14 @@ class ObjectPage extends Component {
               </div>
             </Modal>
           </div>
-
+          <div className="Section-label">Related Works</div>
+          <div className="Staggered-grid">
+                <div className="Item-a"></div>
+                <div className="Item-b"></div>
+                <div className="Item-b"></div>
+                <div className="Item-a"></div>
+          </div>
+                <div className="Item-c"></div>
         </header>
         <div className="Button-scan"><a href="#"><img src={Scan} width="80px"></img></a></div>
         <footer>
