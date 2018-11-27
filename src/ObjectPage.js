@@ -6,7 +6,7 @@ import Modal from 'react-modal';
 import Met from './img/Met-logo.png';
 import Scan from './img/scan.png';
 import {Link} from "react-router-dom";
-
+import Cookies from 'universal-cookie';
 
 
 const customStyles = {
@@ -21,13 +21,17 @@ const customStyles = {
 };
 
 class ObjectPage extends Component {
+
 	constructor(props) {
+                const cookies = new Cookies();
+                console.log(cookies.getAll());
 		super(props);
                 var id = props.id;
                 if (props.match && props.match.params){
                     id = props.match.params.id || props.id || 0;
                 }
 		this.state = {
+                        cookies: cookies,
 			error: null,
 			isLoaded: false,
                         language: "EN",
@@ -46,11 +50,13 @@ class ObjectPage extends Component {
 	}
 
   googleLogin(data){
+      this.state.cookies.set("user_token", data.tokenId, {secure:true});
       var post_data = {
           email: data.profileObj.email,
           accessToken: data.accessToken,
           tokenId: data.tokenId
       }
+      
       fetch('https://virtual-docent.herokuapp.com/login', {
           method: 'POST',
           headers: {
