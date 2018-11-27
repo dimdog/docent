@@ -98,6 +98,7 @@ class ObjectPage extends Component {
     var options = {};
     if (this.state.cookies.get("tokenId")){
         options = {
+            method: 'POST',
             headers: {
             'Accept': 'application/json',
             'Content-Type': 'application/json',
