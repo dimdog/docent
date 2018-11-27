@@ -14,8 +14,8 @@ p{
   display: grid;
   z-index: 1;
   position: fixed;
-  grid-column: 1/8;
-  grid-column-gap: 24px;
+  grid-column: 1/4;
+  grid-column-gap: 10px;
   align-content: flex-end;
   width: 100%;
   padding: 10px;
@@ -32,10 +32,10 @@ p{
 
 .App-title{
   grid-row: 1;
-  grid-column: 2/4;
-  text-align: center;
+  grid-column: 2;
+  text-align: left;
   font-family: sans-serif;
-  text-align: center;
+  text-align: left;
   padding-top: 15px;
   padding-bottom: 9px;
   font-weight: 550;
@@ -48,6 +48,7 @@ p{
   grid-row: 1;
   grid-column: 4;
   align-content:right;
+  margin-left:50px;
   margin-top: 2px;
   border-radius: 25px;
   width: 40px;
