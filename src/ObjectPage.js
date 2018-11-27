@@ -157,12 +157,12 @@ class ObjectPage extends Component {
           </div>
           <div className="Section-label">Related Works</div>
           <div className="Staggered-grid">
-                <div className="Item-a"></div>
-                <div className="Item-b"></div>
-                <div className="Item-b"></div>
-                <div className="Item-a"></div>
+                <div className="Item-a">also by #artist</div>
+                <div className="Item-b"> more from #time period</div>
+                <div className="Item-b"> also by #artist</div>
+                <div className="Item-a"> from the same collector</div>
           </div>
-                <div className="Item-c"></div>
+                <div className="Item-c">in the #gallery</div>
         </header>
         <div className="Button-scan"><a href="#"><img src={Scan} width="80px"></img></a></div>
         <footer>

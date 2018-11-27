@@ -295,9 +295,9 @@ a:hover, a:visited{
   grid-column: 1;
   padding-left:10px;
   padding-right: 10px;
-  font-variant: small-caps;
   font-family: sans-serif;
-  font-weight: regular;
+  font-weight: bold;
+  font-size: 12px;
   background-color: #fafafa;
 
 }
@@ -394,23 +394,34 @@ a:hover, a:visited{
   column-count: 2;
   column-gap: 5px;
 
+
+}
+
+.Item-a, .Item-b, .Item-c{
+  padding: 10px;
+  font-family: sans-serif;
+  font-weight: bold;
+  font-size: 15px;
+  background-color: #AEAEAE;
+  text-shadow: 0 0 5px 10px rgba(0, 0, 0, 0.2);
+
 }
 
 .Item-a{
   height: 200px;
-  background-color: #AEAEAE;
   margin-bottom: 5px;
+
 }
 
 .Item-b{
   height: 250px;
-  background-color: #333333;
   margin-bottom: 5px;
+
 }
 
 .Item-c{
   height: 200px;
-  background-color: #AEAEAE;
   margin-bottom: 50px;
+
 
 }
