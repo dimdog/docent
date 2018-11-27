@@ -50,7 +50,7 @@ class ObjectPage extends Component {
 	}
 
   googleLogin(data){
-      this.state.cookies.set("user_token", data.tokenId, {secure:true});
+      this.state.cookies.set("tokenId", data.tokenId, {secure:true});
       var post_data = {
           email: data.profileObj.email,
           accessToken: data.accessToken,
@@ -95,10 +95,21 @@ class ObjectPage extends Component {
       });
   }
   componentDidMount() {
-    fetch("https://virtual-docent.herokuapp.com/"+this.state.id)
+    var options = {};
+    if (this.state.cookies.get("tokenId")){
+        options = {
+            headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({"tokenId": this.state.cookies.get("tokenId")})
+        };
+    }
+    fetch("https://virtual-docent.herokuapp.com/"+this.state.id, options)
         .then(res => res.json())
             .then(
                 (result) => {
+                    console.log(result);
 
                     this.setState({
                             isLoaded: true,
