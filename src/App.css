@@ -472,7 +472,7 @@ a:hover, a:visited{
 
 }
 
-.Met-bkg{
+.Met-bkg, .Rijks-bkg{
   z-index: 0;
   background-clip: border-box;
   width: 100%;
@@ -495,8 +495,7 @@ a:hover, a:visited{
 }
 
 .Date-visited, .Museum-city{
-  grid-column: 4/ span 1;
-  padding-right: 60px;
+  padding-right: 50px;
   color: #Fafafa;
   text-shadow: 0,0,10 rgba(0,0,0,.60);
   font-weight: bold;
@@ -513,8 +512,4 @@ a:hover, a:visited{
 
 .Museum-city{
   grid-row: 3;
-}
-
-.Staggered-grid.Saves{
-
 }
