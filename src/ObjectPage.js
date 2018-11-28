@@ -51,7 +51,7 @@ class ObjectPage extends Component {
 	}
 
   googleLogin(data){
-      this.state.cookies.set("tokenId", data.tokenId, {secure:true});
+      this.state.cookies.set("tokenId", data.tokenId, {secure:true, path:"/"});
       var post_data = {
           email: data.profileObj.email,
           accessToken: data.accessToken,
