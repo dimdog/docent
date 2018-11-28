@@ -4,6 +4,7 @@ import {Link} from "react-router-dom";
 import MetBkg from './img/met-bkg.png';
 import Rijks from './img/rijksmuseum-logo.png';
 import RijksBkg from './img/rijks-bkg.png';
+import UserGallery from './UserGallery.js';
 
 
 class MySaves extends Component {
@@ -42,10 +43,7 @@ class MySaves extends Component {
                     </div>
                   </div>
                   <div className="Staggered-grid Saves">
-                      <div className="Item-a"></div>
-                      <div className="Item-b"></div>
-                      <div className="Item-b"></div>
-                      <div className="Item-a"></div>
+		    <UserGallery />
                   </div>
             </div>
       </div>

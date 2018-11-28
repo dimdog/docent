@@ -51,7 +51,7 @@ class ObjectPage extends Component {
 	}
 
   googleLogin(data){
-      this.state.cookies.set("tokenId", data.tokenId, {secure:true});
+      this.state.cookies.set("tokenId", data.tokenId, {secure:true, path:"/"});
       var post_data = {
           email: data.profileObj.email,
           accessToken: data.accessToken,
@@ -120,9 +120,7 @@ class ObjectPage extends Component {
   }
   componentDidMount() {
     var options = {};
-    console.log(this.state.cookies.get("tokenId"));
     if (this.state.cookies.get("tokenId")){
-        console.log("we have the cookie");
         options = {
             method: 'POST',
             headers: {
