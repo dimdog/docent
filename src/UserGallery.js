@@ -28,7 +28,7 @@ class UserGallery extends Component {
             this.tileClick = this.tileClick.bind(this);
     }
     componentDidMount() {
-        var options = {};
+        /*var options = {};
         if (this.state.cookies.get("tokenId")){
             options = {
                 method: 'POST',
@@ -38,8 +38,9 @@ class UserGallery extends Component {
                 },
                 body: JSON.stringify({"tokenId": this.state.cookies.get("tokenId")})
             };
-        }
-        fetch("https://virtual-docent.herokuapp.com/gallery", options)
+        }*/
+        //fetch("https://virtual-docent.herokuapp.com/gallery", options)
+        fetch("https://virtual-docent.herokuapp.com/")
             .then(res => res.json())
                 .then(
                     (result) => {
