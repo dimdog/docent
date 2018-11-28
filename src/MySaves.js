@@ -9,8 +9,9 @@ class MySaves extends Component {
   render() {
     return (
       <div className ="View-container">
+      <div className="back">close</div>
         <div className="My-saves">
-              <div className="back">close</div>
+
               <div className="My-saves-title-text">My Gallery</div>
               <div className="My-saves-text">Your saved works live here</div>
           <div className="Museum" id="met">
@@ -20,7 +21,7 @@ class MySaves extends Component {
                   <div className="Museum-title"> <img src={Met} width="80px" alt="the Met Museum"></img></div>
                   <div className="Date-visited">Jan 2019</div>
                   <div className="Museum-city">New York, NY</div>
-                </div>
+              </div>
             </div>
             <div className="Staggered-grid Saves">
                 <div className="Item-a"></div>

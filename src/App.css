@@ -11,6 +11,7 @@ p{
 
 .View-container{
   margin: -8px;
+  padding-top: 24px;
 }
 
 .Navbar{
@@ -460,20 +461,19 @@ a:hover, a:visited{
 .Museum{
   background-color: #333333;
   grid-row:4;
-  grid-column: 1/4;
-
-
+  grid-column: 1/span 4;
+  max-width: 600px;
+  margin-left: -24px;
 }
 
 .Museum-header{
-
   max-width: 600px;
   display:grid;
 
 }
 
 .Met-bkg{
-  position: fixed;
+  z-index: 0;
   background-clip: border-box;
   width: 100%;
   background-blend-mode: darken;
@@ -481,31 +481,34 @@ a:hover, a:visited{
 
 
 .Details-overlay{
+  position: absolute;
   z-index: 1;
   display: grid;
+  width: 100%;
+  max-width: 600px;
 }
 
 .Museum-title{
-  padding: 33px;
+  padding: 50px;
   z-index: 1;
   grid-row: 1;
 }
 
 .Date-visited, .Museum-city{
-
-  grid-column-end: 4;
-  padding-right: 33px;
+  grid-column: 4/ span 1;
+  padding-right: 60px;
   color: #Fafafa;
   text-shadow: 0,0,10 rgba(0,0,0,.60);
   font-weight: bold;
   font-family: sans-serif;
   font-size: 17px;
   text-align: right;
-  z-index: 1;
+
 }
 
 .Date-visited{
   grid-row: 2;
+
 }
 
 .Museum-city{
