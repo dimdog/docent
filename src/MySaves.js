@@ -22,7 +22,7 @@ class MySaves extends Component {
                   <div className="Museum-city">New York, NY</div>
                 </div>
             </div>
-            <div className="Staggered-grid">
+            <div className="Staggered-grid Saves">
                 <div className="Item-a"></div>
                 <div className="Item-b"></div>
                 <div className="Item-b"></div>

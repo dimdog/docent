@@ -462,27 +462,33 @@ a:hover, a:visited{
   grid-row:4;
   grid-column: 1/4;
 
-}
 
-.Met-bkg{
-  z-index: 0;
 }
 
 .Museum-header{
-  height: 250px;
-  width: 100%;
+
+  max-width: 600px;
   display:grid;
 
 }
 
+.Met-bkg{
+  position: fixed;
+  background-clip: border-box;
+  width: 100%;
+  background-blend-mode: darken;
+}
+
+
 .Details-overlay{
   z-index: 1;
+  display: grid;
 }
+
 .Museum-title{
   padding: 33px;
   z-index: 1;
   grid-row: 1;
-
 }
 
 .Date-visited, .Museum-city{
@@ -504,4 +510,8 @@ a:hover, a:visited{
 
 .Museum-city{
   grid-row: 3;
+}
+
+.Staggered-grid.Saves{
+
 }
