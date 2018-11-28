@@ -159,6 +159,12 @@ class ObjectPage extends Component {
   }
 
   render() {
+    var save_button = this.openModal;
+    var profile_img = <a className="Profile-img" width="50px"></a>;
+    if (this.state.user == null){
+       save_button = this.toggleLike;
+       profile_img = <img src={this.state.user.image_url} className="Profile-img" width="50px"></img>;
+    }
     var save_button = (this.state.user == null) ? this.openModal : this.toggleLike;
     console.log(this.state.user == null);
     return (
@@ -171,7 +177,7 @@ class ObjectPage extends Component {
             <Link to="/highlights" className="Highlights-button"><a href="#"><img src={Met} width="40px" alt="Met-logo"></img></a><a className="Profile-img" width="50px"></a>
             </Link>
             <div className="App-title">Virtual Docent</div>
-            <div className="Signed-in" onClick=""><a className="Profile-img" width="50px"></a></div>
+            <div className="Signed-in" onClick="">{profile_img}</div>
         </div>
 
           <img src={this.state.item.primary_image} className="Primary-image" alt="primaryImage" />
