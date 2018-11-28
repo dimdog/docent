@@ -82,4 +82,3 @@ class CameraPage extends Component {
 
 export {Welcome,
         CameraPage}
-

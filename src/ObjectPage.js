@@ -56,7 +56,7 @@ class ObjectPage extends Component {
           accessToken: data.accessToken,
           tokenId: data.tokenId
       }
-      
+
       fetch('https://virtual-docent.herokuapp.com/login', {
           method: 'POST',
           headers: {
