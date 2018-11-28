@@ -25,7 +25,7 @@ class Welcome extends Component {
           </div>
           <div className="Title-text">Virtual Docent</div>
           <div className="Subtitle-text">Scan and <br/> Save Art.</div>
-          <div className="Next-button"><Link to="/camera"><img src={next} width="80" alt="Next-button"/></Link></div>
+          <div className="Button-next"><Link to="/camera"><img src={next} width="80" alt="Next-button"/></Link></div>
         </div>
 
         </div>
@@ -63,6 +63,7 @@ class Camera extends Component {
 
           <div className="Intro-text">Scan the QRcode on the art placard</div>
           <div className="Scan-area"><QrReader onScan={this.handleScan}></QrReader></div>
+          <div className="skip"><a href="#">skip</a></div>
             </div>);
       }
     }
