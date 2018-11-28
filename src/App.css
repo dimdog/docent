@@ -439,7 +439,7 @@ a:hover, a:visited{
 .My-saves-title-text{
   grid-row:2;
   grid-column: 1/4;
-  color: #6B172E;
+  color: #666666;
   font-weight: bold;
   font-size: 37px;
   font-family: sans-serif;
@@ -454,10 +454,54 @@ a:hover, a:visited{
   font-weight: bold;
   font-size: 17px;
   font-family: sans-serif;
+  padding-bottom: 20px;
 }
 
 .Museum{
   background-color: #333333;
   grid-row:4;
   grid-column: 1/4;
+
+}
+
+.Met-bkg{
+  z-index: 0;
+}
+
+.Museum-header{
+  height: 250px;
+  width: 100%;
+  display:grid;
+
+}
+
+.Details-overlay{
+  z-index: 1;
+}
+.Museum-title{
+  padding: 33px;
+  z-index: 1;
+  grid-row: 1;
+
+}
+
+.Date-visited, .Museum-city{
+
+  grid-column-end: 4;
+  padding-right: 33px;
+  color: #Fafafa;
+  text-shadow: 0,0,10 rgba(0,0,0,.60);
+  font-weight: bold;
+  font-family: sans-serif;
+  font-size: 17px;
+  text-align: right;
+  z-index: 1;
+}
+
+.Date-visited{
+  grid-row: 2;
+}
+
+.Museum-city{
+  grid-row: 3;
 }
