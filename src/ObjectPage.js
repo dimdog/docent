@@ -159,7 +159,7 @@ class ObjectPage extends Component {
   }
 
   render() {
-    var save_button = (this.state.user === null) ? this.openModal : this.toggleLike;
+    var save_button = (this.state.user == null) ? this.openModal : this.toggleLike;
     console.log(this.state.user == null);
     return (
       <div className="App">
