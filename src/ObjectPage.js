@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import listen from './img/Listen.png';
 import save from './img/Save.png';
+import saved from './img/Saved.png';
 import GoogleLogin from 'react-google-login';
 import Modal from 'react-modal';
 import Met from './img/Met-logo.png';
@@ -133,7 +134,8 @@ class ObjectPage extends Component {
         .then(res => res.json())
             .then(
                 (result) => {
-                    var user, liked;
+                    var user = null;
+                    var liked = false;
                     if ("user" in Object.keys(result)){
                         user = result.user;
                         delete result.user
@@ -162,7 +164,8 @@ class ObjectPage extends Component {
   }
 
   render() {
-    var save_button = (this.state.user == undefined) ? this.openModal : this.toggleLike;
+    var save_button = (this.state.user === null) ? this.openModal : this.toggleLike;
+    console.log(this.state.user == null);
     return (
       <div className="App">
         <header className="App-header">
@@ -182,7 +185,7 @@ class ObjectPage extends Component {
           <a className="Item-year" href = "#">{this.state.item.obj_date}</a>
           <a className="Item-medium">{this.getPropForLanguage('medium')}</a>
           <a className="Button-listen" href = "#"><img src={listen} width="40px" alt="listen" /></a>
-          <a className="Button-save" href = "#" ><img src={save} onClick={save_button}  width ="40px" alt="save"/><div className="Save-modal"></div></a>
+          <a className="Button-save" href = "#" ><img src={(this.state.liked) ? saved : save} onClick={save_button}  width ="40px" alt="save"/><div className="Save-modal"></div></a>
           <div className="skinny-break"></div>
           <p className="Item-artist">{this.state.item.artist}</p>
           <p className="Item-description">{this.getPropForLanguage('description')}</p>
