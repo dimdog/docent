@@ -138,13 +138,9 @@ class ObjectPage extends Component {
                 (result) => {
                     var user = null;
                     var liked = false;
-                    if ("user" in Object.keys(result)){
-                        user = result.user;
-                    }
-                    if ("liked" in Object.keys(result)){
-                        liked = result.liked;
-                    }
-                    console.log("setting user");
+                    user = result.user;
+                    liked = result.liked;
+                    console.log("setting user:"+user);
 
                     this.setState({
                             isLoaded: true,
