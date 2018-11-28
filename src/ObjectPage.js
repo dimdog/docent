@@ -120,9 +120,7 @@ class ObjectPage extends Component {
   }
   componentDidMount() {
     var options = {};
-    console.log(this.state.cookies.get("tokenId"));
     if (this.state.cookies.get("tokenId")){
-        console.log("we have the cookie");
         options = {
             method: 'POST',
             headers: {
