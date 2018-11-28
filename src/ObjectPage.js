@@ -24,7 +24,6 @@ class ObjectPage extends Component {
 
 	constructor(props) {
                 const cookies = new Cookies();
-                console.log(cookies.getAll());
 		super(props);
                 var id = props.id;
                 if (props.match && props.match.params){
@@ -46,6 +45,7 @@ class ObjectPage extends Component {
                 this.closeModal = this.closeModal.bind(this);
                 this.openModal = this.openModal.bind(this);
                 this.googleLogin = this.googleLogin.bind(this);
+                this.toggleLike = this.toggleLike.bind(this);
 
 	}
 
@@ -56,7 +56,6 @@ class ObjectPage extends Component {
           accessToken: data.accessToken,
           tokenId: data.tokenId
       }
-      
       fetch('https://virtual-docent.herokuapp.com/login', {
           method: 'POST',
           headers: {
@@ -65,6 +64,7 @@ class ObjectPage extends Component {
           },
           body: JSON.stringify(post_data)
       });
+      this.toggleLike();
   }
   getPropForLanguage(prop){
       if (this.state.item && this.state.item.languages){
@@ -94,6 +94,29 @@ class ObjectPage extends Component {
         modalIsOpen: false
       });
   }
+  toggleLike() {
+    var options = {};
+    var method = (this.state.liked) ? 'DELETE' : 'POST';
+    if (this.state.cookies.get("tokenId")){
+        options = {
+            method: method,
+            headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({"tokenId": this.state.cookies.get("tokenId")})
+        };
+    }
+    fetch("https://virtual-docent.herokuapp.com/like/"+this.state.id, options)
+        .then(res => res.json())
+            .then(
+                (result) => {
+                    this.setState({liked: !this.state.liked});
+                },
+                (error) => {
+                }
+            )
+  }
   componentDidMount() {
     var options = {};
     if (this.state.cookies.get("tokenId")){
@@ -110,13 +133,24 @@ class ObjectPage extends Component {
         .then(res => res.json())
             .then(
                 (result) => {
-                    console.log(result);
+                    var user, liked;
+                    if ("user" in Object.keys(result)){
+                        user = result.user;
+                        delete result.user
+                    }
+                    if ("liked" in Object.keys(result)){
+                        liked = result.liked;
+                        delete result.liked
+                    }
 
                     this.setState({
                             isLoaded: true,
+                            user: user,
+                            liked: liked,
                             item: result,
                             id: this.state.id
                     });
+                    console.log(this.state);
                 },
                 (error) => {
                     this.setState({
@@ -128,6 +162,7 @@ class ObjectPage extends Component {
   }
 
   render() {
+    var save_button = (this.state.user == undefined) ? this.openModal : this.toggleLike;
     return (
       <div className="App">
         <header className="App-header">
@@ -135,7 +170,7 @@ class ObjectPage extends Component {
 
         <div className="Grid-container">
         <div className="Navbar">
-            <Link to="/highlights" className="Highlights-button" onClick={this.Highlights}><a href="#"><img src={Met} width="40px" alt="Met-logo"></img></a><a className="Profile-img" width="50px"></a>
+            <Link to="/highlights" className="Highlights-button"><a href="#"><img src={Met} width="40px" alt="Met-logo"></img></a><a className="Profile-img" width="50px"></a>
             </Link>
             <div className="App-title">Virtual Docent</div>
             <div className="Signed-in" onClick=""><a className="Profile-img" width="50px"></a></div>
@@ -147,7 +182,7 @@ class ObjectPage extends Component {
           <a className="Item-year" href = "#">{this.state.item.obj_date}</a>
           <a className="Item-medium">{this.getPropForLanguage('medium')}</a>
           <a className="Button-listen" href = "#"><img src={listen} width="40px" alt="listen" /></a>
-          <a className="Button-save" href = "#" ><img src={save} onClick={this.openModal}  width ="40px" alt="save"/><div className="Save-modal"></div></a>
+          <a className="Button-save" href = "#" ><img src={save} onClick={save_button}  width ="40px" alt="save"/><div className="Save-modal"></div></a>
           <div className="skinny-break"></div>
           <p className="Item-artist">{this.state.item.artist}</p>
           <p className="Item-description">{this.getPropForLanguage('description')}</p>
