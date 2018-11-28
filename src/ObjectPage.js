@@ -140,11 +140,9 @@ class ObjectPage extends Component {
                     var liked = false;
                     if ("user" in Object.keys(result)){
                         user = result.user;
-                        delete result.user
                     }
                     if ("liked" in Object.keys(result)){
                         liked = result.liked;
-                        delete result.liked
                     }
                     console.log("setting user");
 
