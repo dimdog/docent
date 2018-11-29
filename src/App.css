@@ -11,6 +11,7 @@ p{
 
 .Main{
   background-color: #EB222A;
+  background-position: top;
   display: grid;
   grid-template-columns: auto;
 }
@@ -26,6 +27,9 @@ p{
 }
 .cta{
   grid-row: 2;
+  position: relative;
+  bottom: 50px;
+
 }
 
 .NavBar{

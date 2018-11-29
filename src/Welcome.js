@@ -13,23 +13,23 @@ class Welcome extends Component {
   render() {
     return (
       <div className="Main">
-        <div className="Museum-launch">
-            <div className="Angle-TL">
-              <img src={Angle_TL} className="Angle-TL" width="100" alt="bracket"/>
+            <div className="Museum-launch">
+                <div className="Angle-TL">
+                  <img src={Angle_TL} className="Angle-TL" width="100" alt="bracket"/>
+                </div>
+                <div className="Met-logo">
+                  <img src={Met} className="Met-logo" width="183px" alt="Met-logo"/>
+                </div>
+                <div className="Angle-BR">
+                  <img src={Angle_BR} className="Angle-BR" width="100" alt="bracket"/>
+                </div>
             </div>
-            <div className="Met-logo">
-              <img src={Met} className="Met-logo" width="183px" alt="Met-logo"/>
+            <div className="cta">
+                <div className="Title-text">Virtual Docent</div>
+                <div className="Subtitle-text">Scan and <br/> Save Art.</div>
+                <div className="Button-next"><Link to="/camera"><img src={next} width="80" alt="Next-button"/></Link></div>
             </div>
-            <div className="Angle-BR">
-              <img src={Angle_BR} className="Angle-BR" width="100" alt="bracket"/>
-            </div>
-        </div>
-        <div className="cta">
-            <div className="Title-text">Virtual Docent</div>
-            <div className="Subtitle-text">Scan and <br/> Save Art.</div>
-            <div className="Button-next"><Link to="/camera"><img src={next} width="80" alt="Next-button"/></Link></div>
-        </div>
-        </div>
+      </div>
 
     );
   }
