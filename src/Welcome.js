@@ -58,7 +58,7 @@ class Camera extends Component {
     render() {
       if (!this.state.camera){
           return [<div className="Intro-text">Allow camera access to start scanning</div>,
-          <a className="Allow-access-button" href="#" onClick={this.activateCamera}> Allow Access </a>];
+          <Link to="" className="Allow-access-button" href="#" onClick={this.activateCamera}> Allow Access </Link>];
       }
       else{
           return (<div className="Camera-view Main">
