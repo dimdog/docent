@@ -8,6 +8,7 @@ import Met from './img/Met-logo.png';
 import Scan from './img/scan.png';
 import {Link} from "react-router-dom";
 import Cookies from 'universal-cookie';
+import NavBar from './NavBar.js';
 
 
 const customStyles = {
@@ -173,12 +174,7 @@ class ObjectPage extends Component {
 
 
         <div className="Grid-container">
-        <div className="Navbar">
-            <Link to="/highlights" className="Highlights-button"><a href="#"><img src={Met} width="40px" alt="Met-logo"></img></a><a className="Profile-img" width="50px"></a>
-            </Link>
-            <div className="App-title">Virtual Docent</div>
-            <div className="Signed-in" onClick="">{profile_img}</div>
-        </div>
+        <NavBar />
 
           <img src={this.state.item.primary_image} className="Primary-image" alt="primaryImage" />
           <h1 className="Item-title">{this.getPropForLanguage('title')}</h1>
@@ -186,7 +182,7 @@ class ObjectPage extends Component {
           <a className="Item-medium">{this.getPropForLanguage('medium')}</a>
           <a className="Button-listen" href = "#"><img src={listen} width="40px" alt="listen" /></a>
           <a className="Button-save" href = "#" ><img src={(this.state.liked) ? saved : save} onClick={save_button}  width ="40px" alt="save"/><div className="Save-modal"></div></a>
-          <div className="skinny-break"></div>
+
           <p className="Item-artist">{this.state.item.artist}</p>
           <p className="Item-description">{this.getPropForLanguage('description')}</p>
           </div>
