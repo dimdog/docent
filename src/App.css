@@ -1,4 +1,8 @@
 
+#met{
+  display: none;
+}
+
 p{
   font-family: sans-serif;
   font-weight: 550;
@@ -138,7 +142,7 @@ p{
 .Gallery {
   display: grid;
   grid-template-columns: auto auto auto auto;
-
+  padding: -5px;
   }
 
 .Item-title{
@@ -358,14 +362,22 @@ a:hover, a:visited{
 }
 
 .sign-out{
-  padding-top: 30px;
-  padding-bottom: 30px;
-  font-size: 17px;
+  font-size: 13px;
   font-weight: bold;
   color: #A7182F;
   text-align: center;
   font-family: sans-serif;
   text-decoration: none;
+  position: fixed;
+  bottom: 30px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  width: 250px;
+  grid-row: 1;
+  transform: translateX(50%);
+  background-color: #ffffff;
+  border-radius: 25px;
+
 }
 
 .App-link {
@@ -494,7 +506,7 @@ a:hover, a:visited{
   grid-row:4;
   grid-column: 1/span 4;
   max-width: 600px;
-  margin-left: -24px;
+
 }
 
 .Museum-header{
@@ -502,10 +514,9 @@ a:hover, a:visited{
   max-height: 250px;
   width: 100%;
   max-width: 1000px;
-  max-height: 30vmax;
-  position: relative;
+  max-height: 250px;
   object-fit: cover;
-  background-attachment: scroll;
+  background-attachment:fixed;
 
 
 
@@ -515,7 +526,7 @@ a:hover, a:visited{
   z-index: 0;
   background-clip: border-box;
   width: 100%;
-  height: 2550px;
+  height: 250px;
   background-blend-mode: darken;
 
 }
@@ -523,7 +534,6 @@ a:hover, a:visited{
 
 .Details-overlay{
   position: absolute;
-  z-index: 1;
   display: grid;
   width: 100%;
   height: 250px;
@@ -531,13 +541,13 @@ a:hover, a:visited{
 }
 
 .Museum-title{
-  padding: 50px;
+  padding: 30px;
   z-index: 1;
   grid-row: 1;
 }
 
 .Date-visited, .Museum-city{
-  padding-right: 50px;
+  margin-right: 50px;
   color: #Fafafa;
   text-shadow: 0,0,10 rgba(0,0,0,.60);
   font-weight: bold;
@@ -554,6 +564,12 @@ a:hover, a:visited{
 
 .Museum-city{
   grid-row: 3;
+  padding-bottom: 50px;
+}
+
+.View-container{
+  margin-left: -8px;
+  margin-right: -8px;
 }
 
 footer{

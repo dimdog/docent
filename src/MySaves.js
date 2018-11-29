@@ -24,7 +24,7 @@ class MySaves extends Component {
                       <div className="Museum-title"> <img src={Met} width="150px" alt="the Met Museum"></img></div>
                       <div className="Date-visited">Jan 2019</div>
                       <div className="Museum-city">New York, NY</div>
-                  </div>
+                    </div>
                 </div>
               </div>
             <div className="Museum" id="rijks">
@@ -36,10 +36,9 @@ class MySaves extends Component {
                           <div className="Museum-city">Amsterdam, NL</div>
                         </div>
                       </div>
-                  <UserGallery />
-            </
 
-            div>
+                  <UserGallery />
+            </div>
       <div className="sign-out"><Link to="">Sign Out</Link></div>
       </div>
     );
