@@ -52,12 +52,9 @@ class Highlights extends Component {
         )
     }
     render() {
-      var profile_img = <a className="Profile-img" width="50px"></a>;
-      /*if (this.state.user != null){
-         profile_img = <Link to="/mysaves"><img src={this.state.user.image_url} className="Profile-img" width="50px"></img></Link>;
-      }*/
+
         return (
-        <div>
+        <div className="View-container">
           <NavBar/>
           <Gallery images={this.state.items} className="Gallery" onClickThumbnail={this.tileClick} />
           <Fab/>

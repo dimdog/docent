@@ -1,17 +1,4 @@
 
-#met{
-  display: none;
-}
-
-p{
-  font-family: sans-serif;
-  font-weight: 550;
-  font-size: 13pt;
-  padding-left: 16px;
-  padding-right: 16px;
-  color: #4a4a4a;
-
-}
 .Main{
   background-color: #EB222A;
   background-position: top;
@@ -169,7 +156,7 @@ p{
   grid-row: 6;
 }
 
-.Item-medium, .Item-year{
+.Item-medium, .Item-year, .Item-description{
   grid-column: 1 /4;
   font-weight: 500;
   font-family: sans-serif;
@@ -274,16 +261,18 @@ p{
   grid-column: 4/4;
 
 }
-.Allow-access-button{
+.Allow-access-button, .sign-out{
   grid-row: 4;
-  grid-column: 1/4;
+  grid-column: 2/4;
+  width: 300px;
+  bottom: 50px;
   padding-bottom: 50px;
   margin: 50px;
   background-color: #ffffff;
   text-align: center;
   padding: 21px 50px 21px 50px;
   font-weight: bold;
-  font-size: 22px;
+  font-size: 20px;
   font-family: sans-serif;
   border-radius: 34px;
   box-shadow: 0px 12px 12px 0px rgba(0,0,0,.24);
@@ -361,25 +350,6 @@ a:hover, a:visited{
 
 }
 
-.sign-out{
-  font-size: 13px;
-  font-weight: bold;
-  color: #A7182F;
-  text-align: center;
-  font-family: sans-serif;
-  text-decoration: none;
-  position: fixed;
-  bottom: 30px;
-  padding-top: 15px;
-  padding-bottom: 15px;
-  width: 250px;
-  grid-row: 1;
-  transform: translateX(50%);
-  background-color: #ffffff;
-  border-radius: 25px;
-
-}
-
 .App-link {
   color: #61dafb;
 }
@@ -392,7 +362,6 @@ a:hover, a:visited{
 
 .Modal-style{
   display: grid;
-  background-color: none;
 }
 
 .Login-modal{
@@ -502,20 +471,21 @@ a:hover, a:visited{
 }
 
 .Museum{
-  background-color: #333333;
   grid-row:4;
   grid-column: 1/span 4;
   max-width: 600px;
   display: block;
-
+  margin-bottom: 50px;
+  height: 250px;
 }
 
 .Museum-header{
   display:grid;
-  max-height: 250px;
+  height: 250px;
   width: 100%;
   max-width: 1000px;
   object-fit:fill;
+  background-attachment: fixed;
 
 
 
@@ -569,6 +539,7 @@ a:hover, a:visited{
 .View-container{
   margin-left: -8px;
   margin-right: -8px;
+  margin-top:-8px;
 }
 
 footer{
