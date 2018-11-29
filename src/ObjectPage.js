@@ -181,7 +181,6 @@ class ObjectPage extends Component {
         </div>
 
           <img src={this.state.item.primary_image} className="Primary-image" alt="primaryImage" />
-
           <h1 className="Item-title">{this.getPropForLanguage('title')}</h1>
           <a className="Item-year" href = "#">{this.state.item.obj_date}</a>
           <a className="Item-medium">{this.getPropForLanguage('medium')}</a>
