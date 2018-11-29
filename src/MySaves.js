@@ -26,26 +26,21 @@ class MySaves extends Component {
                       <div className="Museum-city">New York, NY</div>
                   </div>
                 </div>
-                <div className="Staggered-grid Saves">
-                    <div className="Item-a"></div>
-                    <div className="Item-b"></div>
-                    <div className="Item-b"></div>
-                    <div className="Item-a"></div>
-                </div>
               </div>
             <div className="Museum" id="rijks">
-                  <div className="Museum-header" height="250px">
+                  <div className="Museum-header">
                       <div className="Rijks-bkg"><img src={RijksBkg} width ="100%"></img></div>
-                      <div className="Details-overlay">
-                        <div className="Museum-title"> <img src={Rijks} width="250px" alt="the Rijks Museum"></img></div>
-                        <div className="Date-visited">March 2019</div>
-                        <div className="Museum-city">Amsterdam, NL</div>
-                    </div>
-                  </div>
-                  <div className="Staggered-grid Saves">
-		    <UserGallery />
-                  </div>
-            </div>
+                        <div className="Details-overlay">
+                          <div className="Museum-title"> <img src={Rijks} width="250px" alt="the Rijks Museum"></img></div>
+                          <div className="Date-visited">March 2019</div>
+                          <div className="Museum-city">Amsterdam, NL</div>
+                        </div>
+                      </div>
+                  <UserGallery />
+            </
+
+            div>
+      <div className="sign-out"><Link to="">Sign Out</Link></div>
       </div>
     );
   }
