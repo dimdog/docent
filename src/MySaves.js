@@ -29,7 +29,7 @@ class MySaves extends Component {
               </div>
             <div className="Museum" id="rijks">
                   <div className="Museum-header">
-                      <div className="Rijks-bkg"><img src={RijksBkg} width ="100%"></img></div>
+                      <div className="Rijks-bkg"><img src={RijksBkg} width ="100%" height="250px"></img></div>
                         <div className="Details-overlay">
                           <div className="Museum-title"> <img src={Rijks} width="250px" alt="the Rijks Museum"></img></div>
                           <div className="Date-visited">March 2019</div>

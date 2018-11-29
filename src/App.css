@@ -142,7 +142,7 @@ p{
 .Gallery {
   display: grid;
   grid-template-columns: auto auto auto auto;
-  padding: -5px;
+  margin: -8px;
   }
 
 .Item-title{
@@ -506,6 +506,7 @@ a:hover, a:visited{
   grid-row:4;
   grid-column: 1/span 4;
   max-width: 600px;
+  display: block;
 
 }
 
@@ -514,9 +515,7 @@ a:hover, a:visited{
   max-height: 250px;
   width: 100%;
   max-width: 1000px;
-  max-height: 250px;
-  object-fit: cover;
-  background-attachment:fixed;
+  object-fit:fill;
 
 
 
