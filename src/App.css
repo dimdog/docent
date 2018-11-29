@@ -12,6 +12,7 @@ p{
 .Main{
   background-color: #EB222A;
   background-position: top;
+  margin: -8px;
   display: grid;
   grid-template-columns: auto;
 }
