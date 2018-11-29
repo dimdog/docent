@@ -540,5 +540,6 @@ a:hover, a:visited{
 footer{
   position: fixed;
   bottom: 0;
+  margin-left: -8px;
   width: 100%;
 }
