@@ -12,22 +12,24 @@ class Welcome extends Component {
 
   render() {
     return (
-
-      <div className="Welcome">
-      <div className="Angle-TL"><img src={Angle_TL} className="Angle-TL" width="100" alt="bracket">
-      </img>
+      <div className="Main">
+        <div className="Museum-launch">
+            <div className="Angle-TL">
+              <img src={Angle_TL} className="Angle-TL" width="100" alt="bracket"/>
+            </div>
+            <div className="Met-logo">
+              <img src={Met} className="Met-logo" width="183px" alt="Met-logo"/>
+            </div>
+            <div className="Angle-BR">
+              <img src={Angle_BR} className="Angle-BR" width="100" alt="bracket"/>
+            </div>
         </div>
-      <div className="Met-logo"><img src={Met} className="Met-logo" width="183px" alt="Met-logo">
-        </img>
+        <div className="cta">
+            <div className="Title-text">Virtual Docent</div>
+            <div className="Subtitle-text">Scan and <br/> Save Art.</div>
+            <div className="Button-next"><Link to="/camera"><img src={next} width="80" alt="Next-button"/></Link></div>
         </div>
-        <div className="Angle-BR"><img src={Angle_BR} className="Angle-BR" width="100" alt="bracket">
-        </img>
-          </div>
-          <div className="Title-text">Virtual Docent</div>
-          <div className="Subtitle-text">Scan and <br/> Save Art.</div>
-          <div className="Button-next"><Link to="/camera"><img src={next} width="80" alt="Next-button"/></Link></div>
         </div>
-
 
     );
   }
@@ -59,24 +61,27 @@ class Camera extends Component {
           <a className="Allow-access-button" href="#" onClick={this.activateCamera}> Allow Access </a>];
       }
       else{
-          return (<div className="Camera-view">
+          return (<div className="Camera-view Main">
 
-          <div className="Intro-text">Scan the QRcode on the art placard</div>
-          <div className="Scan-area"><QrReader onScan={this.handleScan}/></div>
-          <div className="skip"><a href="#">skip</a></div>
+
+                  <div className="skip"><Link to="/" href="#">skip</Link></div>
+                  <div className="Intro-text">Scan the QRcode on the art placard</div>
+                  <div className="Scan-area"><QrReader onScan={this.handleScan}/></div>
+
             </div>);
+
       }
     }
 }
 class CameraPage extends Component {
   render() {
     return (
-      <div className ="View-container">
-      <div className="Allow-camera">
+
+      <div className="Allow-camera Main">
           <div><Link to="/" className="back" >back</Link></div>
           <Camera history={this.props.history}/>
 </div>
-        </div>
+
     );
   }
 }

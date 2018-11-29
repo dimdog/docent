@@ -9,7 +9,23 @@ p{
 
 }
 
-.View-container{
+.Main{
+  background-color: #EB222A;
+  display: grid;
+  grid-template-columns: auto;
+}
+
+.Museum-launch, .cta{
+  display: grid;
+  grid-column: 1/4;
+}
+
+.Museum-launch{
+  grid-row: 1;
+
+}
+.cta{
+  grid-row: 2;
 }
 
 .NavBar{
@@ -192,37 +208,25 @@ p{
   margin: -8px;
 }
 
-.Welcome, .Allow-camera{
-  background-color: #EB222A;
-  width: 100%;
-  min-height: 100%;
-  margin: -8px;
-  display: grid;
-  grid-template-columns: auto auto auto auto;
-  padding-bottom: 20vmin;
-
-}
-
 .Angle-TL{
   padding-top: 20px;
   padding-left: 16px;
   padding-bottom: 20px;
   grid-row:2;
-  grid-column: 2/2;
+  grid-column: 1/2;
 
 }
 
 .Angle-BR{
   padding-top: 20px;
-  padding-right: 16px;
   grid-row: 4;
-  grid-column: 4/4;
+  grid-column: 3/4;
 
 }
 
 .Met-logo{
   grid-row: 3;
-  grid-column: 3/3;
+  grid-column: 2/3;
 }
 
 .Title-text, .Intro-text {
@@ -230,8 +234,14 @@ p{
   font-weight: bold;
   font-size: 37px;
   font-family: sans-serif;
-  padding-top: 50px;
+  padding-top: 100px;
   padding-right: 50px;
+}
+
+.Intro-text{
+  grid-row: 2;
+  grid-column: 1/4;
+  padding-left: 50px;
 }
 
 .Title-text{
@@ -256,12 +266,6 @@ p{
   grid-column: 4/4;
 
 }
-
-.Allow-camera{
-  padding-top: 24px;
-  grid-row: 2
-}
-
 .Allow-access-button{
   grid-row: 3;
   grid-column: 1/ span 4;
@@ -313,7 +317,6 @@ a:hover, a:visited{
 
 .Camera-view{
   width: 100%;
-  display: grid;
   padding-bottom: 50px;
 
 }
@@ -322,29 +325,34 @@ a:hover, a:visited{
   grid-row: 3;
   grid-column: 1/4;
   width: 100%;
-  padding-top: 30vmin;
-  padding-bottom: 50px;
+  max-width: 600px;
+  padding-top: 50px;
+
 }
 
 .back{
+  position: absolute;
+  top: 24px;
+  left: 24px;
 
-  grid-column: 1;
-  padding-left: 24px;
 }
 .back, .skip{
-  grid-row: 1;
+
   font-size: 17px;
   font-weight: bold;
   color: #6B172E;
   font-family: sans-serif;
   text-decoration: none;
 
+
 }
 
 .skip{
-  grid-column: 4;
+  position: absolute;
+  top: 24px;
+  right:24px;
   text-align: right;
-  padding-right: 24px;
+
 }
 
 .App-link {
