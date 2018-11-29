@@ -5,10 +5,10 @@ import saved from './img/Saved.png';
 import GoogleLogin from 'react-google-login';
 import Modal from 'react-modal';
 import Met from './img/Met-logo.png';
-import Scan from './img/scan.png';
 import {Link} from "react-router-dom";
 import Cookies from 'universal-cookie';
 import NavBar from './NavBar.js';
+import Fab from './fab.js';
 
 
 const customStyles = {
@@ -216,7 +216,7 @@ class ObjectPage extends Component {
           </div>
                 <div className="Item-c">in the #gallery</div>
         </header>
-        <Link to="/camera" className="Button-scan"><a href="#"><img src={Scan} width="80px"></img></a></Link>
+        <Fab/>
         <footer>
         <div className="languages"><a href="#" onClick={this.changetoEn} className = "english">🇺🇸 english</a><a href="#" onClick={this.changetoNl} className = "dutch">🇳🇱 dutch</a></div>
         </footer>

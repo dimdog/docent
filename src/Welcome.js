@@ -12,7 +12,7 @@ class Welcome extends Component {
 
   render() {
     return (
-      <div className ="View-container">
+
       <div className="Welcome">
       <div className="Angle-TL"><img src={Angle_TL} className="Angle-TL" width="100" alt="bracket">
       </img>
@@ -28,7 +28,7 @@ class Welcome extends Component {
           <div className="Button-next"><Link to="/camera"><img src={next} width="80" alt="Next-button"/></Link></div>
         </div>
 
-        </div>
+
     );
   }
 }
@@ -62,7 +62,7 @@ class Camera extends Component {
           return (<div className="Camera-view">
 
           <div className="Intro-text">Scan the QRcode on the art placard</div>
-          <div className="Scan-area"><QrReader onScan={this.handleScan}></QrReader></div>
+          <div className="Scan-area"><QrReader onScan={this.handleScan}/></div>
           <div className="skip"><a href="#">skip</a></div>
             </div>);
       }

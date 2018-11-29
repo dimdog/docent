@@ -10,8 +10,6 @@ p{
 }
 
 .View-container{
-  margin: -8px;
-  padding-top: 24px;
 }
 
 .NavBar{
@@ -321,9 +319,11 @@ a:hover, a:visited{
 }
 
 .Scan-area{
-  padding-top: 50px;
-  grid-row:2;
-  grid-column: 1/ 4;
+  grid-row: 3;
+  grid-column: 1/4;
+  width: 100%;
+  padding-top: 30vmin;
+  padding-bottom: 50px;
 }
 
 .back{
