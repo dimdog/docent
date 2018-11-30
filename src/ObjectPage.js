@@ -9,6 +9,7 @@ import {Link} from "react-router-dom";
 import Cookies from 'universal-cookie';
 import NavBar from './NavBar.js';
 import Fab from './fab.js';
+import SnackBar from './SnackBar.js';
 
 
 const customStyles = {
@@ -18,7 +19,7 @@ const customStyles = {
     right                 : 'auto',
     bottom                : 'auto',
     marginRight           : '-50%',
-    transform             : 'translate(-50%, -50%)'
+    transform             : 'translate(-50%, -50%)',
   }
 };
 
@@ -181,7 +182,7 @@ class ObjectPage extends Component {
           <a className="Item-year" href = "#">{this.state.item.obj_date}</a>
           <a className="Item-medium">{this.getPropForLanguage('medium')}</a>
           <a className="Button-listen" href = "#"><img src={listen} width="40px" alt="listen" /></a>
-          <a className="Button-save" href = "#" ><img src={(this.state.liked) ? saved : save} onClick={save_button}  width ="40px" alt="save"/><div className="Save-modal"></div></a>
+          <a className="Button-save" href = "#" ><img src={(this.state.liked) ? saved : save} onClick={save_button}  width ="40px" alt="save"/><SnackBar/></a>
 
           <p className="Item-artist">{this.state.item.artist}</p>
           <p className="Item-description">{this.getPropForLanguage('description')}</p>
@@ -216,6 +217,7 @@ class ObjectPage extends Component {
           </div>
                 <div className="Item-c">in the #gallery</div>
         </header>
+
         <Fab/>
         <footer>
         <div className="languages"><a href="#" onClick={this.changetoEn} className = "english">🇺🇸 english</a><a href="#" onClick={this.changetoNl} className = "dutch">🇳🇱 dutch</a></div>
