@@ -5,17 +5,21 @@ import Highlights from './Highlights.js';
 import ObjectPage from './ObjectPage.js';
 import {Welcome, CameraPage} from './Welcome.js';
 import MySaves from './MySaves.js';
+import HttpsRedirect from 'react-https-redirect';
+
 
 const AppRouter = () => (
-  <Router>
-	<div>
-      <Route path="/" exact component={Welcome} />
-      <Route path="/camera" exact component={CameraPage} />
-      <Route path="/highlights/" component={Highlights} />
-      <Route path="/object/:id" component={ObjectPage} />
-      <Route path="/mysaves" component={MySaves} />
-	</div>
-  </Router>
+  <HttpsRedirect>
+      <Router>
+            <div>
+          <Route path="/" exact component={Welcome} />
+          <Route path="/camera" exact component={CameraPage} />
+          <Route path="/highlights/" component={Highlights} />
+          <Route path="/object/:id" component={ObjectPage} />
+          <Route path="/mysaves" component={MySaves} />
+            </div>
+      </Router>
+  </HttpsRedirect>
 );
 
 export default AppRouter;
