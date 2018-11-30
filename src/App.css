@@ -14,8 +14,13 @@
 
 .Museum-launch{
   grid-row: 1;
-
 }
+
+.Push-RL{
+  transition: 0,0;
+  animation-direction: normal;
+}
+
 .cta{
   grid-row: 2;
   position: relative;
@@ -395,13 +400,12 @@ a:hover, a:visited{
 
 
 .Modal-style{
-  display: grid;
+
 }
 
 .Login-modal{
-  padding: 30px;
-  border-radius: 5px;
-  box-shadow: 0px 0px 10px rgba(0,0,0,.24);
+  display: grid;
+  border-radius: 20px;
 
 }
 
@@ -411,7 +415,7 @@ a:hover, a:visited{
   font-weight: 550;
   font-size: 27px;
   font-family: sans-serif;
-  padding-bottom: 50px;
+  padding: 20px;
 }
 
 .Button-close{
@@ -423,13 +427,14 @@ a:hover, a:visited{
   color: #6B172E;
   font-family: sans-serif;
   text-decoration: none;
-  padding-left: 24px;
-  padding-right: 24px;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 .Button-login{
   grid-row:2;
   grid-column: 4;
+  margin:20px;
 }
 
 .Section-label{

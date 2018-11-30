@@ -187,13 +187,13 @@ class ObjectPage extends Component {
           <p className="Item-description">{this.getPropForLanguage('description')}</p>
           </div>
 
-        <div className="Modal-style">
+        <div className="Login-modal">
           <Modal
           isOpen={this.state.modalIsOpen}
           onRequestClose={this.closeModal}
           style={customStyles}
           contentLabel="Login Modal">
-          <div className="Login-modal">
+
             <div className="Modal-title">Save the works <br/> you love.</div>
               <div><a onClick={this.closeModal} href="#" className="Button-close">Cancel</a>
                 <GoogleLogin
@@ -204,7 +204,7 @@ class ObjectPage extends Component {
                     className="Button-login"
                 />
               </div>
-              </div>
+
             </Modal>
           </div>
           <div className="Section-label">Related Works</div>
