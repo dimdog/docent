@@ -510,7 +510,6 @@ a:hover, a:visited{
   max-width: 600px;
   display: block;
   margin-bottom: 50px;
-  height: 250px;
 }
 
 .Museum-header{
@@ -567,7 +566,7 @@ a:hover, a:visited{
 
 .Museum-city{
   grid-row: 3;
-  padding-bottom: 50px;
+  padding-bottom: 70px;
 }
 
 footer{

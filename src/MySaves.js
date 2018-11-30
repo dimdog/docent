@@ -17,7 +17,7 @@ class MySaves extends Component {
                   <div className="My-saves-title-text">My Gallery</div>
                   <div className="My-saves-text">Your saved works live here</div>
             </div>
-            <div className="Museum" id="met">
+            <div className="Museum view" id="met">
                 <div className="Museum-header" height="250px">
                     <div className="Met-bkg"><img src={MetBkg} width ="100%"></img></div>
                     <div className="Details-overlay">
@@ -27,7 +27,7 @@ class MySaves extends Component {
                     </div>
                 </div>
               </div>
-            <div className="Museum" id="rijks">
+            <div className="Museum view" id="rijks">
                   <div className="Museum-header">
                       <div className="Rijks-bkg"><img src={RijksBkg} width ="100%" height="250px"></img></div>
                         <div className="Details-overlay">
@@ -37,7 +37,7 @@ class MySaves extends Component {
                         </div>
                       </div>
 
-                  <UserGallery />
+                  <UserGallery className="view" />
                   </div>
                   <div className="sign-out"><Link to="">Sign Out</Link></div>
 
