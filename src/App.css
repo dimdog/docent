@@ -1,5 +1,5 @@
 
-.Main{
+.view{
   background-color: #EB222A;
   background-position: top;
   margin: -8px;
@@ -28,6 +28,7 @@
   display: grid;
   z-index: 1;
   position: fixed;
+  top:0;
   grid-column: 1/4;
   grid-column-gap: 10px;
   align-content: flex-end;
@@ -273,10 +274,11 @@
   border-radius: 34px;
   box-shadow: 0px 12px 12px 0px rgba(0,0,0,.24);
   cursor: pointer;
+}
 
-
-
-
+.sign-out{
+  position: fixed;
+  bottom:0px;
 }
 
 a:link{
@@ -300,7 +302,6 @@ a:hover, a:visited{
 }
 
 .Fab-intstruction{
-
   display: grid;
 }
 

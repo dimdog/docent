@@ -38,9 +38,10 @@ class MySaves extends Component {
                       </div>
 
                   <UserGallery />
+                  </div>
+                  <div className="sign-out"><Link to="">Sign Out</Link></div>
+
             </div>
-      <div className="sign-out"><Link to="">Sign Out</Link></div>
-      </div>
     );
   }
 }
