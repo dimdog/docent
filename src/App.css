@@ -276,7 +276,7 @@
   cursor: pointer;
 }
 
-.sign-out{
+.sign-out, .Allow-access-button {
   position: fixed;
   bottom:0px;
 }
