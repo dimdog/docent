@@ -29,6 +29,7 @@
   z-index: 1;
   position: fixed;
   top:0;
+  left: 0;
   grid-column: 1/4;
   grid-column-gap: 10px;
   align-content: flex-end;
