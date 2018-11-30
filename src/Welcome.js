@@ -12,7 +12,7 @@ class Welcome extends Component {
 
   render() {
     return (
-      <div className="Main">
+      <div className="view">
             <div className="Museum-launch">
                 <div className="Angle-TL">
                   <img src={Angle_TL} className="Angle-TL" width="100" alt="bracket"/>
@@ -61,7 +61,7 @@ class Camera extends Component {
           <Link to="" className="Allow-access-button" href="#" onClick={this.activateCamera}> Allow Access </Link>];
       }
       else{
-          return (<div className="Camera-view Main">
+          return (<div className="Camera-view view">
 
 
                   <div className="skip"><Link to="/" href="#">skip</Link></div>
@@ -77,7 +77,7 @@ class CameraPage extends Component {
   render() {
     return (
 
-      <div className="Allow-camera Main">
+      <div className="Allow-camera view">
           <div><Link to="/" className="back" >back</Link></div>
           <Camera history={this.props.history}/>
 </div>

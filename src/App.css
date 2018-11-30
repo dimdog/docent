@@ -299,6 +299,7 @@ a:hover, a:visited{
   width: 100%;
   padding: 45px;
   margin: -8px;
+  box-shadow: 0px 0px 20px rgba(0,0,0,.20);
 }
 
 .Fab-intstruction{
@@ -566,12 +567,6 @@ a:hover, a:visited{
 .Museum-city{
   grid-row: 3;
   padding-bottom: 50px;
-}
-
-.View-container{
-  margin-left: -8px;
-  margin-right: -8px;
-  margin-top:-8px;
 }
 
 footer{
