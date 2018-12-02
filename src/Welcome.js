@@ -61,7 +61,7 @@ class Camera extends Component {
 
             <div className="Camera-view">
             <div className="Intro-text">Allow camera access to start scanning</div>
-            <div className="Allow-access-button"><Link to=""  href="#" onClick={this.activateCamera}> Allow Access </Link></div>
+            <div className="Allow-access-button"><a  href="#" onClick={this.activateCamera}> Allow Access </a></div>
             </div>
 
           ];
