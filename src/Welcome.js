@@ -7,6 +7,7 @@ import Angle_BR from './img/Angle_BR.png';
 import Angle_TL from './img/Angle_TL.png';
 import next from './img/next.png';
 import QrReader from "react-qr-reader";
+import Highlights from "./Highlights.js"
 
 class Welcome extends Component {
 
@@ -53,6 +54,7 @@ class Camera extends Component {
 
             <div className="Camera-view">
             <Link to="/" className="back" >cancel</Link>
+            <Link to="/highlights" className="skip" href="#">skip</Link>
             <div className="Intro-text">Allow camera access to start scanning</div>
             <div className="Allow-access-button"><a  href="#" onClick={this.activateCamera}> Allow Access </a></div>
             </div>
@@ -62,7 +64,7 @@ class Camera extends Component {
       else{
           return (<div className="Camera-view">
                   <Link to="/" className="back" >cancel</Link>
-                  <Link to="/" className="skip" href="#">skip</Link>
+                  <Link to="/highlights" className="skip" href="#">skip</Link>
                   <div className="Intro-text">Scan the QRcode on the art placard</div>
                   <div className="Scan-area"><QrReader onScan={this.handleScan}/></div>
 
