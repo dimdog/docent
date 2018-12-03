@@ -15,8 +15,8 @@ render() {
 
 
       <div className="NavBar">
-          <Link to="/highlights" className="Highlights-button"><a href="#"><img src={Met} width="40px" alt="Met-logo"></img></a><a className="Profile-img" width="50px"></a>
-          </Link>
+          <Link to="/highlights" className="Highlights-button"><img src={Met} width="40px" alt="Met-logo"></img></Link>
+          <a className="Profile-img" width="50px"></a>
           <div className="App-title">Virtual Docent</div>
           <Link to="/mysaves" className="Signed-in">{profile_img}</Link>
       </div>

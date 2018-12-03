@@ -31,10 +31,10 @@ class Fab extends Component {
         }
 
       return (
-          <div className={this.fixedAreaClass}>
+          <div className="{this.fixedAreaClass}">
               <div className="Fab">
                   {instruction}
-                  <Link to="/camera" className="Button-scan"><a href="#"><img src={Scan} width="80px"></img></a></Link>
+                  <Link to="/camera" className="Button-scan"><img src={Scan} width="80px"></img></Link>
               </div>
           </div>
 

@@ -25,7 +25,7 @@ render() {
 
       <div className="SnackBar" id="snackbar">
 
-          <button onclick=".save_button">Show Snackbar</button>
+          <button onClick="{.save_button}">Show Snackbar</button>
 
 
           <div id="snackbar">Saved to your gallery </div>
