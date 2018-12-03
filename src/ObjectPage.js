@@ -180,9 +180,9 @@ class ObjectPage extends Component {
           <h1 className="Item-title">{this.getPropForLanguage('title')}</h1>
           <a className="Item-year" href = "#">{this.state.item.obj_date}</a>
           <a className="Item-medium">{this.getPropForLanguage('medium')}</a>
-          <a className="Button-listen" href = "#"><img src={listen} width="40px" alt="listen" /></a>
-          <a className="Button-save" href = "#" ><img src={(this.state.liked) ? saved : save} onClick={save_button}  width ="40px" alt="save"/><SnackBar/></a>
-
+          <div className="Button-group"><Link to ="/" className="Button-listen" href = "#"><img src={listen} width="40px" alt="listen" /></Link>
+          <Link to ="/" className="Button-save" href = "#" ><img src={(this.state.liked) ? saved : save} onClick={save_button}  width ="40px" alt="save"/><SnackBar/></Link>
+          </div>
           <p className="Item-artist">{this.state.item.artist}</p>
           <p className="Item-description">{this.getPropForLanguage('description')}</p>
           </div>

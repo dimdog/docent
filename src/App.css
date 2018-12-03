@@ -92,18 +92,14 @@
 }
 
 .Button-listen{
-  grid-row: 3;
-  grid-column: 4;
-  padding-left: 50px;
-  padding-top: 15px;
-  padding-right: 30px;
+  padding-right: 15px;
+
 }
 
-.Button-save{
+.Button-group{
   padding-top: 15px;
   grid-row: 3;
   grid-column: 4;
-
 }
 
 .Button-load{
