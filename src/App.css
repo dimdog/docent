@@ -255,8 +255,6 @@
 
 }
 .Allow-access-button, .sign-out{
-  position: fixed;
-  margin-bottom: 50px;
   max-width: 270px;
   background-color: #ffffff;
   text-align: center;
@@ -270,8 +268,12 @@
 }
 
 .sign-out, .Allow-access-button {
-  position: fixed;
-  bottom:0px;
+  position:relative;
+  margin-bottom:50px;
+  margin-top: 100vmin;
+  margin-left: 10%;
+  margin-right: 10%;
+
 }
 
 a:link{
