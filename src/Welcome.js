@@ -19,8 +19,8 @@ class Welcome extends Component {
             <div className="cta">
                 <div className="Title-text">Virtual Docent</div>
                 <div className="Subtitle-text">Scan and <br/> Save Art.</div>
-                <div className="Button-next"><Link to="/camera"><img src={next} width="80" alt="Next-button"/></Link></div>
             </div>
+              <Link to="/camera" className="Button-next" ><img src={next} width="80" alt="Next-button"/></Link>
       </div>
 
     );

@@ -1,6 +1,12 @@
 
 .welcome-bk{
   background-color: #EB222A;
+  position: fixed;
+  top:0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
 }
 
 .view{
@@ -14,6 +20,7 @@
 .Museum-launch, .cta{
   display: grid;
   grid-column: 1/4;
+
 }
 
 .Museum-launch{
@@ -205,6 +212,8 @@
 
 .Met-logo{
   padding: 30px;
+  margin-top: 10vmin;
+  margin-bottom: 10vmin;
 }
 
 .Title-text, .Intro-text {
@@ -246,12 +255,9 @@
 
 }
 .Allow-access-button, .sign-out{
-  grid-row: 4;
-  grid-column: 2/4;
-  width: 300px;
-  bottom: 50px;
-  padding-bottom: 50px;
-  margin: 50px;
+  position: fixed;
+  width: 200px;
+  margin-bottom: 50px;
   background-color: #ffffff;
   text-align: center;
   padding: 21px 50px 21px 50px;
