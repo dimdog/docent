@@ -6,8 +6,8 @@ import {Link} from "react-router-dom";
 
 class NavBar extends Component {
 render() {
-  var profile_img = <a className="Profile-img" width="50px"></a>;
-  /*if (this.state.user != null){
+  var profile_img = <div className="Profile-img" width="50px"></div>;
+  /*if (this.state.user != null){ // TODO need to remove the link around {profile_img} when we re-enable this
      save_button = this.toggleLike;
      profile_img = <Link to="/mysaves"><img src={this.state.user.image_url} className="Profile-img" width="50px"></img></Link>;
   }*/
@@ -18,7 +18,7 @@ render() {
           <Link to="/highlights" className="Highlights-button"><a href="#"><img src={Met} width="40px" alt="Met-logo"></img></a><a className="Profile-img" width="50px"></a>
           </Link>
           <div className="App-title">Virtual Docent</div>
-          <Link to="/mysaves" className="Signed-in" onClick="">{profile_img}</Link>
+          <Link to="/mysaves" className="Signed-in">{profile_img}</Link>
       </div>
   );
   }

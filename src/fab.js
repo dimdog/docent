@@ -9,9 +9,17 @@ class Fab extends Component {
         super(props);
         this.state = {showInstruction:true};
         this.hideInstruction = this.hideInstruction.bind(this);
+        this.fixedAreaClass = this.fixedAreaClass.bind(this);
     }
     hideInstruction(){
         this.setState({showInstruction: false});
+    }
+    fixedAreaClass(){
+        console.log(this.state);
+        if (this.state.showInstruction){
+            return "Fixed-area";
+        }
+        return "";
     }
     render() {
         var instruction = null;
@@ -23,7 +31,7 @@ class Fab extends Component {
         }
 
       return (
-          <div className="Fixed-area">
+          <div className={this.fixedAreaClass}>
               <div className="Fab">
                   {instruction}
                   <Link to="/camera" className="Button-scan"><a href="#"><img src={Scan} width="80px"></img></a></Link>

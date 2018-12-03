@@ -168,7 +168,6 @@ class ObjectPage extends Component {
        profile_img = <Link to="/mysaves"><img src={this.state.user.image_url} className="Profile-img" width="50px"></img></Link>;
     }
     var save_button = (this.state.user == null) ? this.openModal : this.toggleLike;
-    console.log(this.state.user == null);
     return (
       <div className="App">
         <header className="App-header">
