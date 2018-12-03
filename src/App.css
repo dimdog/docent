@@ -482,7 +482,7 @@ a:hover, a:visited{
 
 .My-saves{
   display: grid;
-  padding-top: 30px;
+  padding-top: 20px;
   padding-left: 24px;
 }
 
@@ -494,7 +494,7 @@ a:hover, a:visited{
   font-size: 37px;
   font-family: sans-serif;
   padding-top: 50px;
-  padding-bottom: 10px;
+  padding-bottom: 5px;
 
 }
 
