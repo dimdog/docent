@@ -7,12 +7,16 @@ import RijksBkg from './img/rijks-bkg.png';
 import UserGallery from './UserGallery.js';
 
 
+
 class MySaves extends Component {
 
   render() {
     return (
       <div className ="View-container">
-            <div className="back">close</div>
+      <div className="StickyBar">
+          <Link to="" className="back">close</Link>
+          <Link to="" className="sign-out">Sign Out</Link>
+      </div>
             <div className="My-saves">
                   <div className="My-saves-title-text">My Gallery</div>
                   <div className="My-saves-text">Your saved works live here</div>
@@ -39,8 +43,6 @@ class MySaves extends Component {
 
                   <UserGallery className="view" />
                   </div>
-                  <div className="sign-out"><Link to="">Sign Out</Link></div>
-
             </div>
     );
   }

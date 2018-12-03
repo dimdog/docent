@@ -13,7 +13,6 @@ render() {
   }*/
   return (
 
-
       <div className="NavBar">
           <Link to="/highlights" className="Highlights-button"><img src={Met} width="40px" alt="Met-logo"></img></Link>
           <a className="Profile-img" width="50px"></a>
