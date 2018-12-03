@@ -1,4 +1,8 @@
 
+.welcome-bk{
+  background-color: #EB222A;
+}
+
 .view{
   background-color: #EB222A;
   background-position: top;
@@ -14,6 +18,7 @@
 
 .Museum-launch{
   grid-row: 1;
+  max-width: 350px;
 }
 
 .Push-RL{
@@ -197,25 +202,9 @@
   margin: -8px;
 }
 
-.Angle-TL{
-  padding-top: 20px;
-  padding-left: 16px;
-  padding-bottom: 20px;
-  grid-row:2;
-  grid-column: 1/2;
-
-}
-
-.Angle-BR{
-  padding-top: 20px;
-  grid-row: 4;
-  grid-column: 3/4;
-
-}
 
 .Met-logo{
-  grid-row: 3;
-  grid-column: 2/3;
+  padding: 30px;
 }
 
 .Title-text, .Intro-text {

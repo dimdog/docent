@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Met from './img/Met-logo.png';
 import {Link} from "react-router-dom";
-import{save_button} from "./ObjectPage.js"
+import {save_button} from "./ObjectPage.js";
 
 
 
@@ -25,7 +25,7 @@ render() {
 
       <div className="SnackBar" id="snackbar">
 
-          <button onClick="{.save_button}">Show Snackbar</button>
+          <button onClick={".save_button"}>Show Snackbar</button>
 
 
           <div id="snackbar">Saved to your gallery </div>

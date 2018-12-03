@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Link } from "react-router-dom";
 import logo from './logo.svg';
 import './App.css';
-import Met from './img/Met-logo.png';
+import Met from './img/met.png';
 import Angle_BR from './img/Angle_BR.png';
 import Angle_TL from './img/Angle_TL.png';
 import next from './img/next.png';
@@ -12,17 +12,9 @@ class Welcome extends Component {
 
   render() {
     return (
-      <div className="view">
+      <div className="welcome-bk">
             <div className="Museum-launch">
-                <div className="Angle-TL">
-                  <img src={Angle_TL} className="Angle-TL" width="100" alt="bracket"/>
-                </div>
-                <div className="Met-logo">
-                  <img src={Met} className="Met-logo" width="183px" alt="Met-logo"/>
-                </div>
-                <div className="Angle-BR">
-                  <img src={Angle_BR} className="Angle-BR" width="100" alt="bracket"/>
-                </div>
+                  <img src={Met} className="Met-logo" width="311px" alt="Met-logo"/>
             </div>
             <div className="cta">
                 <div className="Title-text">Virtual Docent</div>
