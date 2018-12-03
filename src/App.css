@@ -1,5 +1,5 @@
 
-.welcome-bk{
+.welcome-bk, .Camera-view{
   background-color: #EB222A;
   position: fixed;
   top:0;
@@ -256,8 +256,8 @@
 }
 .Allow-access-button, .sign-out{
   position: fixed;
-  width: 200px;
   margin-bottom: 50px;
+  max-width: 270px;
   background-color: #ffffff;
   text-align: center;
   padding: 21px 50px 21px 50px;
@@ -336,9 +336,7 @@ a:hover, a:visited{
   margin-right: 15px;
 }
 
-.Camera-view{
-  width: 100%;
-}
+
 
 .Scan-area{
   grid-row: 3;

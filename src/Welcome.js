@@ -52,6 +52,7 @@ class Camera extends Component {
           return [
 
             <div className="Camera-view">
+            <Link to="/" className="back" >canel</Link>
             <div className="Intro-text">Allow camera access to start scanning</div>
             <div className="Allow-access-button"><a  href="#" onClick={this.activateCamera}> Allow Access </a></div>
             </div>
@@ -59,10 +60,9 @@ class Camera extends Component {
           ];
   }
       else{
-          return (<div className="Camera-view view">
-
-
-                  <div className="skip"><Link to="/" href="#">skip</Link></div>
+          return (<div className="Camera-view">
+                  <Link to="/" className="back" >cancel</Link>
+                  <Link to="/" className="skip" href="#">skip</Link>
                   <div className="Intro-text">Scan the QRcode on the art placard</div>
                   <div className="Scan-area"><QrReader onScan={this.handleScan}/></div>
 
@@ -75,10 +75,10 @@ class CameraPage extends Component {
   render() {
     return (
 
-      <div className="Allow-camera view">
-          <div><Link to="/" className="back" >back</Link></div>
+      <div className="Camera-view">
+          <Link to="/" className="back" >back</Link>
           <Camera history={this.props.history}/>
-</div>
+      </div>
 
     );
   }
