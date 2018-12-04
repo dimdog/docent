@@ -174,7 +174,7 @@ class ObjectPage extends Component {
 
 
         <div className="Grid-container">
-        <NavBar />
+        <NavBar user={this.state.user} />
 
           <img src={this.state.item.primary_image} className="Primary-image" alt="primaryImage" />
           <h1 className="Item-title">{this.getPropForLanguage('title')}</h1>

@@ -53,7 +53,7 @@ class Camera extends Component {
           return [
 
             <div className="Camera-view">
-            <Link to="/" className="back" >cancel</Link>
+            <a onClick={this.props.history.goBack} className="back" >cancel</a>
             <Link to="/highlights" className="skip" href="#">skip</Link>
             <div className="Intro-text">Allow camera access to start scanning</div>
             <div className="Allow-access-button"><a  href="#" onClick={this.activateCamera}> Allow Access </a></div>
@@ -63,7 +63,7 @@ class Camera extends Component {
   }
       else{
           return (<div className="Camera-view">
-                  <Link to="/" className="back" >cancel</Link>
+                  <a onClick={this.props.history.goBack} className="back" >cancel</a>
                   <Link to="/highlights" className="skip" href="#">skip</Link>
                   <div className="Intro-text">Scan the QRcode on the art placard</div>
                   <div className="Scan-area"><QrReader onScan={this.handleScan}/></div>
