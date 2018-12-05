@@ -54,7 +54,7 @@ class MySaves extends Component {
                         </div>
                       </div>
 
-                  <UserGallery className="view" />
+                  <UserGallery history={this.props.history} className="view" />
                   </div>
             </div>
     );
