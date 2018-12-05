@@ -7,11 +7,7 @@ import {Link} from "react-router-dom";
 class NavBar extends Component {
     constructor(props) {
         super(props);
-        if (props.user){
-            this.state = {parentState: props.parentState};
-        } else {
-            this.state = {};
-        }
+        this.state = {parentState: props.parentState};
     }
     render() {
       var profile_img = <div></div>;
