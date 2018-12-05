@@ -53,7 +53,8 @@ class ObjectPage extends Component {
 	}
 
   googleLogin(data){
-      this.state.cookies.set("tokenId", data.tokenId, {secure:true, path:"/"});
+      console.log(data);
+      this.state.cookies.set("tokenId", data.tokenId, {secure:true, path:"/"}, );
       var post_data = {
           email: data.profileObj.email,
           accessToken: data.accessToken,
@@ -138,12 +139,10 @@ class ObjectPage extends Component {
                 (result) => {
                     var user = null;
                     var liked = false;
-                    console.log(result);
                     if (result.user){
                         user = result.user;
                     }
                     liked = result.liked;
-                    console.log("setting user:"+user);
 
                     this.setState({
                             isLoaded: true,
@@ -152,7 +151,6 @@ class ObjectPage extends Component {
                             item: result,
                             id: this.state.id
                     });
-                    console.log(this.state);
                 },
                 (error) => {
                     this.setState({
@@ -169,8 +167,9 @@ class ObjectPage extends Component {
     if (this.state.user != null){
        save_button = this.toggleLike;
        profile_img = <Link to="/mysaves"><img src={this.state.user.image_url} className="Profile-img" width="50px"></img></Link>;
+    } else {
+        save_button = this.openModal;
     }
-    var save_button = (this.state.user == null) ? this.openModal : this.toggleLike;
     return (
       <div className="App">
         <header className="App-header">
@@ -184,7 +183,7 @@ class ObjectPage extends Component {
           <a className="Item-year" href = "#">{this.state.item.obj_date}</a>
           <a className="Item-medium">{this.getPropForLanguage('medium')}</a>
           <div className="Button-group"><Link to ="/" className="Button-listen" href = "#"><img src={listen} width="40px" alt="listen" /></Link>
-          <Link to ="/" className="Button-save" href = "#" ><img src={(this.state.liked) ? saved : save} onClick={save_button}  width ="40px" alt="save"/><SnackBar/></Link>
+          <a className="Button-save" href = "#" ><img src={(this.state.liked) ? saved : save} onClick={save_button}  width ="40px" alt="save"/><SnackBar/></a>
           </div>
           <p className="Item-artist">{this.state.item.artist}</p>
           <p className="Item-description">{this.getPropForLanguage('description')}</p>
