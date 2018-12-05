@@ -34,7 +34,7 @@ class Fab extends Component {
           <div className="{this.fixedAreaClass}">
               <div className="Fab">
                   {instruction}
-                  <Link to="/camera" className="Button-scan"><img src={Scan} width="80px"></img></Link>
+                  <Link to="/camera?activate" className="Button-scan"><img src={Scan} width="80px"></img></Link>
               </div>
           </div>
 

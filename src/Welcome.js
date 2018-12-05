@@ -34,9 +34,15 @@ class Camera extends Component {
     }
     constructor(props) {
         super(props);
+        var camera = false;
+        console.log(props.history);
+        console.log(props.history.location.search === "?activate");
+        if (props.history.location.search === "?activate"){
+            camera = true;
+        }
         this.state = {
             error: null,
-            camera: false,
+            camera: camera,
             result: null
         }
         this.activateCamera = this.activateCamera.bind(this);
