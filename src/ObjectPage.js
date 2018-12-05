@@ -138,7 +138,10 @@ class ObjectPage extends Component {
                 (result) => {
                     var user = null;
                     var liked = false;
-                    user = result.user;
+                    console.log(result);
+                    if (result.user){
+                        user = result.user;
+                    }
                     liked = result.liked;
                     console.log("setting user:"+user);
 
