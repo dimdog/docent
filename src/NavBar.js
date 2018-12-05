@@ -10,7 +10,7 @@ class NavBar extends Component {
     }
     render() {
       var profile_img = <div></div>;
-      if (this.props.parentState.user != null){
+      if (this.props.parentState && this.props.parentState.user != null){
          profile_img = <Link to="/mysaves" className="Signed-in"><img src={this.props.parentState.user.image_url} className="Profile-img" width="50px"></img></Link>;
       }
       return (
