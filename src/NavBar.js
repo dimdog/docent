@@ -7,12 +7,11 @@ import {Link} from "react-router-dom";
 class NavBar extends Component {
     constructor(props) {
         super(props);
-        this.state = {parentState: props.parentState};
     }
     render() {
       var profile_img = <div></div>;
-      if (this.state.parentState.user != null){
-         profile_img = <Link to="/mysaves" className="Signed-in"><img src={this.state.parentState.user.image_url} className="Profile-img" width="50px"></img></Link>;
+      if (this.props.parentState.user != null){
+         profile_img = <Link to="/mysaves" className="Signed-in"><img src={this.props.parentState.user.image_url} className="Profile-img" width="50px"></img></Link>;
       }
       return (
 
