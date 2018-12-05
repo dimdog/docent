@@ -53,8 +53,7 @@ class ObjectPage extends Component {
 	}
 
   googleLogin(data){
-      console.log(data);
-      this.state.cookies.set("tokenId", data.tokenId, {secure:true, path:"/"}, );
+      this.state.cookies.set("tokenId", data.tokenId, {secure:true, path:"/", maxAge:data.tokenObj.expires_in});
       var post_data = {
           email: data.profileObj.email,
           accessToken: data.accessToken,
@@ -176,7 +175,7 @@ class ObjectPage extends Component {
 
 
         <div className="Grid-container">
-        <NavBar user={this.state.user} />
+        <NavBar parentState={this.state} />
 
           <img src={this.state.item.primary_image} className="Primary-image" alt="primaryImage" />
           <h1 className="Item-title">{this.getPropForLanguage('title')}</h1>

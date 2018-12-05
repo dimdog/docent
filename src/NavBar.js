@@ -8,15 +8,15 @@ class NavBar extends Component {
     constructor(props) {
         super(props);
         if (props.user){
-            this.state = {user: props.user};
+            this.state = {parentState: props.parentState};
         } else {
             this.state = {};
         }
     }
     render() {
       var profile_img = <div></div>;
-      if (this.state.user != null){
-         profile_img = <Link to="/mysaves" className="Signed-in"><img src={this.state.user.image_url} className="Profile-img" width="50px"></img></Link>;
+      if (this.state.parentState.user != null){
+         profile_img = <Link to="/mysaves" className="Signed-in"><img src={this.state.parentState.user.image_url} className="Profile-img" width="50px"></img></Link>;
       }
       return (
 
