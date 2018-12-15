@@ -56,7 +56,7 @@ class Highlights extends Component {
 
         return (
         <div className="View-container">
-          <NavBar/>
+          <NavBar parentState={this.state} />
           <Gallery images={this.state.items} className="Gallery" onClickThumbnail={this.tileClick} />
           <Fab/>
 
