@@ -30,7 +30,7 @@ class Highlights extends Component {
             this.tileClick = this.tileClick.bind(this);
     }
     componentDidMount() {
-        fetch("https://docentapp.com/")
+        fetch("https://docentapp.com/api")
             .then(res => res.json())
                 .then(
                     (result) => {
@@ -40,7 +40,8 @@ class Highlights extends Component {
                         });
                         this.setState({
                                 isLoaded: true,
-                                items: items
+                                items: items,
+                                user: result.user
                         });
                     },
                     (error) => {
@@ -55,7 +56,7 @@ class Highlights extends Component {
 
         return (
         <div className="View-container">
-          <NavBar/>
+          <NavBar parentState={this.state} />
           <Gallery images={this.state.items} className="Gallery" onClickThumbnail={this.tileClick} />
           <Fab/>
 
