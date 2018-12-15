@@ -67,12 +67,12 @@ class ObjectPage extends Component {
             .then(
                 (result) => {
                     this.setState({user: result.user});
+                    this.toggleLike();
+                    this.closeModal();
                 },
                 (error) => {
                 }
             );
-      this.toggleLike();
-      this.closeModal();
   }
   getPropForLanguage(prop){
       if (this.state.item && this.state.item.languages){
