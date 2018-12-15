@@ -72,6 +72,7 @@ class ObjectPage extends Component {
                 }
             );
       this.toggleLike();
+      this.closeModal();
   }
   getPropForLanguage(prop){
       if (this.state.item && this.state.item.languages){
@@ -103,7 +104,7 @@ class ObjectPage extends Component {
   }
   toggleLike() {
     var method = (this.state.liked) ? 'DELETE' : 'POST';
-    fetch("https://docentapp.com/api/like/"+this.state.id)
+    fetch("https://docentapp.com/api/like/"+this.state.id, {method:method})
         .then(res => res.json())
             .then(
                 (result) => {
