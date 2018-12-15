@@ -6,7 +6,6 @@ import GoogleLogin from 'react-google-login';
 import Modal from 'react-modal';
 import Met from './img/Met-logo.png';
 import {Link} from "react-router-dom";
-import Cookies from 'universal-cookie';
 import NavBar from './NavBar.js';
 import Fab from './fab.js';
 import SnackBar from './SnackBar.js';
@@ -26,14 +25,12 @@ const customStyles = {
 class ObjectPage extends Component {
 
 	constructor(props) {
-                const cookies = new Cookies();
 		super(props);
                 var id = props.id;
                 if (props.match && props.match.params){
                     id = props.match.params.id || props.id || 0;
                 }
 		this.state = {
-                        cookies: cookies,
 			error: null,
 			isLoaded: false,
                         language: "EN",
@@ -53,7 +50,6 @@ class ObjectPage extends Component {
 	}
 
   googleLogin(data){
-      //this.state.cookies.set("tokenId", data.tokenId, {secure:true, path:"/", maxAge:data.tokenObj.expires_in});
       var post_data = {
           email: data.profileObj.email,
           accessToken: data.accessToken,
@@ -66,7 +62,15 @@ class ObjectPage extends Component {
             'Content-Type': 'application/json',
           },
           body: JSON.stringify(post_data)
-      });
+      })
+        .then(res => res.json())
+            .then(
+                (result) => {
+                    this.setState({user: result.user});
+                },
+                (error) => {
+                }
+            );
       this.toggleLike();
   }
   getPropForLanguage(prop){
@@ -98,19 +102,8 @@ class ObjectPage extends Component {
       });
   }
   toggleLike() {
-    var options = {};
     var method = (this.state.liked) ? 'DELETE' : 'POST';
-    if (this.state.cookies.get("tokenId")){
-        options = {
-            method: method,
-            headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({"tokenId": this.state.cookies.get("tokenId")})
-        };
-    }
-    fetch("https://docentapp.com/api/like/"+this.state.id, options)
+    fetch("https://docentapp.com/api/like/"+this.state.id)
         .then(res => res.json())
             .then(
                 (result) => {
@@ -118,21 +111,10 @@ class ObjectPage extends Component {
                 },
                 (error) => {
                 }
-            )
+            );
   }
   componentDidMount() {
-    var options = {};
-    if (this.state.cookies.get("tokenId")){
-        options = {
-            method: 'POST',
-            headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({"tokenId": this.state.cookies.get("tokenId")})
-        };
-    }
-    fetch("https://docentapp.com/api/"+this.state.id, options)
+    fetch("https://docentapp.com/api/"+this.state.id)
         .then(res => res.json())
             .then(
                 (result) => {

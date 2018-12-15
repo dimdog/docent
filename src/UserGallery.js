@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Gallery from 'react-grid-gallery';
-import Cookies from 'universal-cookie';
 
 function galItemfromItem(item){
     return {
@@ -17,10 +16,8 @@ class UserGallery extends Component {
         this.props.history.push('/object/'+this.state.items[index].id)
     }
     constructor(props) {
-            const cookies = new Cookies();
             super(props);
             this.state = {
-                    cookies: cookies,
                     error: null,
                     isLoaded: false,
                     items: []
@@ -28,18 +25,7 @@ class UserGallery extends Component {
             this.tileClick = this.tileClick.bind(this);
     }
     componentDidMount() {
-        /*var options = {};
-        if (this.state.cookies.get("tokenId")){
-            options = {
-                method: 'POST',
-                headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({"tokenId": this.state.cookies.get("tokenId")})
-            };
-        }*/
-        //fetch("https://virtual-docent.herokuapp.com/gallery", options)
+        //fetch("https://docentapp.com/gallery")
         fetch("https://docentapp.com/api")
             .then(res => res.json())
                 .then(
@@ -50,7 +36,8 @@ class UserGallery extends Component {
                         });
                         this.setState({
                                 isLoaded: true,
-                                items: items
+                                items: items,
+                                user: result.user
                         });
                     },
                     (error) => {

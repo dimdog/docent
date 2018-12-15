@@ -40,7 +40,8 @@ class Highlights extends Component {
                         });
                         this.setState({
                                 isLoaded: true,
-                                items: items
+                                items: items,
+                                user: result.user
                         });
                     },
                     (error) => {
