@@ -59,7 +59,7 @@ class ObjectPage extends Component {
           accessToken: data.accessToken,
           tokenId: data.tokenId
       }
-      fetch('https://virtual-docent.herokuapp.com/login', {
+      fetch('https://docentapp.com/login', {
           method: 'POST',
           headers: {
             'Accept': 'application/json',
@@ -110,7 +110,7 @@ class ObjectPage extends Component {
             body: JSON.stringify({"tokenId": this.state.cookies.get("tokenId")})
         };
     }
-    fetch("https://virtual-docent.herokuapp.com/like/"+this.state.id, options)
+    fetch("https://docentapp.com/like/"+this.state.id, options)
         .then(res => res.json())
             .then(
                 (result) => {
@@ -132,7 +132,7 @@ class ObjectPage extends Component {
             body: JSON.stringify({"tokenId": this.state.cookies.get("tokenId")})
         };
     }
-    fetch("https://virtual-docent.herokuapp.com/"+this.state.id, options)
+    fetch("https://docentapp.com/"+this.state.id, options)
         .then(res => res.json())
             .then(
                 (result) => {

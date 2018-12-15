@@ -30,7 +30,7 @@ class Highlights extends Component {
             this.tileClick = this.tileClick.bind(this);
     }
     componentDidMount() {
-        fetch("https://virtual-docent.herokuapp.com/")
+        fetch("https://docentapp.com/")
             .then(res => res.json())
                 .then(
                     (result) => {
