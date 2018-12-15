@@ -40,7 +40,7 @@ class UserGallery extends Component {
             };
         }*/
         //fetch("https://virtual-docent.herokuapp.com/gallery", options)
-        fetch("https://docentapp.com/")
+        fetch("https://docentapp.com/api")
             .then(res => res.json())
                 .then(
                     (result) => {
