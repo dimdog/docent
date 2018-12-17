@@ -9,20 +9,25 @@ import HttpsRedirect from 'react-https-redirect';
 
 import ReactGA from 'react-ga';
 ReactGA.initialize('UA-131092657-1');
-ReactGA.pageview(window.location.pathname + window.location.search);
 
-const AppRouter = () => (
-  <HttpsRedirect>
-      <Router>
-            <div>
-          <Route path="/" exact component={Welcome} />
-          <Route path="/camera" exact component={CameraPage} />
-          <Route path="/highlights/" component={Highlights} />
-          <Route path="/object/:id" component={ObjectPage} />
-          <Route path="/mysaves" component={MySaves} />
-            </div>
-      </Router>
-  </HttpsRedirect>
-);
+class AppRouter extends Component {
+    render() {
+      ReactGA.pageview(window.location.pathname + window.location.search);
+      return (
+          <HttpsRedirect>
+              <Router>
+                    <div>
+                  <Route path="/" exact component={Welcome} />
+                  <Route path="/camera" exact component={CameraPage} />
+                  <Route path="/highlights/" component={Highlights} />
+                  <Route path="/object/:id" component={ObjectPage} />
+                  <Route path="/mysaves" component={MySaves} />
+                    </div>
+              </Router>
+          </HttpsRedirect>
+
+      );
+    }
+}
 
 export default AppRouter;
