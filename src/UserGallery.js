@@ -5,8 +5,8 @@ function galItemfromItem(item){
     return {
         src: item.primary_image,
         thumbnail: item.primary_image,
-        thumbnailWidth: 500, // TOOO
-        thumbnailHeight: 500, // TODO
+        thumbnailWidth: item.primary_image_width || 500,
+        thumbnailHeight: item.primary_image_height || 500,
         caption: item.title,
         id: item.id
     }
@@ -25,8 +25,7 @@ class UserGallery extends Component {
             this.tileClick = this.tileClick.bind(this);
     }
     componentDidMount() {
-        fetch("https://docentapp.com/gallery")
-        //fetch("https://docentapp.com/api")
+        fetch("https://docentapp.com/api/gallery")
             .then(res => res.json())
                 .then(
                     (result) => {
