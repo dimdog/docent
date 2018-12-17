@@ -45,6 +45,7 @@ class ObjectPage extends Component {
                 this.closeModal = this.closeModal.bind(this);
                 this.openModal = this.openModal.bind(this);
                 this.googleLogin = this.googleLogin.bind(this);
+                this.demoLogin = this.demoLogin.bind(this);
                 this.toggleLike = this.toggleLike.bind(this);
 
 	}

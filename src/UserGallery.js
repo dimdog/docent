@@ -25,8 +25,8 @@ class UserGallery extends Component {
             this.tileClick = this.tileClick.bind(this);
     }
     componentDidMount() {
-        //fetch("https://docentapp.com/gallery")
-        fetch("https://docentapp.com/api")
+        fetch("https://docentapp.com/gallery")
+        //fetch("https://docentapp.com/api")
             .then(res => res.json())
                 .then(
                     (result) => {
