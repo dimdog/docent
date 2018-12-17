@@ -66,7 +66,7 @@ class ObjectPage extends Component {
         .then(res => res.json())
             .then(
                 (result) => {
-                    this.setState({user: result.user});
+                    this.setState({user: result});
                     this.toggleLike();
                     this.closeModal();
                 },
