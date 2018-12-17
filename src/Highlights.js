@@ -10,8 +10,8 @@ function galItemfromItem(item){
     return {
         src: item.primary_image,
         thumbnail: item.primary_image,
-        thumbnailWidth: 500, // TOOO
-        thumbnailHeight: 500, // TODO
+        thumbnailWidth: item.primary_image_width / 10,
+        thumbnailHeight: item.primary_image_height / 10,
         caption: item.title,
         id: item.id
     }
