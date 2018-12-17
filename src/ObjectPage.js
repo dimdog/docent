@@ -90,6 +90,19 @@ class ObjectPage extends Component {
         language: "NL"
       });
   }
+  demoLogin(){
+      fetch('https://docentapp.com/api/demologin')
+        .then(res => res.json())
+            .then(
+                (result) => {
+                    this.setState({user: result});
+                    this.toggleLike();
+                    this.closeModal();
+                },
+                (error) => {
+                }
+            );
+  }
   openModal(){
       if (!this.state.loggedIn){
           this.setState({
@@ -179,7 +192,9 @@ class ObjectPage extends Component {
           contentLabel="Login Modal">
 
             <div className="Modal-title">Save the works <br/> you love.</div>
-              <div><a onClick={this.closeModal} href="#" className="Button-close">Cancel</a>
+              <div>
+                  <a onClick={this.closeModal} href="#" className="Button-close">Cancel</a>
+                  <a onClick={this.demoLogin} href="#" className="Button-demo">Demo Login</a>
                 <GoogleLogin
                     buttonText="Login With Google"
                     clientId="633799705698-fs81n284e1iv4318fk2vdclksv29d82e.apps.googleusercontent.com"
