@@ -158,7 +158,7 @@ class ObjectPage extends Component {
                     liked = result.liked;
                     var unprocessed_items = result.artist_other_works.concat(result.department_other_works);
                     var items = [];
-                    result.items.forEach(function(item){
+                    unprocessed_items.forEach(function(item){
                         items.push(galItemfromItem(item));
                     });
                     console.log(items);
