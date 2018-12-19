@@ -18,7 +18,7 @@ function galItemfromItem(item){
 }
 class Highlights extends Component {
     tileClick (index){
-        this.props.history.push('/object/'+this.state.items[index].id)
+        this.props.history.push('/object/'+this.state.items[index].id);
     }
     constructor(props) {
             super(props);

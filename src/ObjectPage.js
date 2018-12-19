@@ -9,6 +9,7 @@ import {Link} from "react-router-dom";
 import NavBar from './NavBar.js';
 import Fab from './fab.js';
 import SnackBar from './SnackBar.js';
+import Gallery from 'react-grid-gallery';
 
 
 const customStyles = {
@@ -22,6 +23,17 @@ const customStyles = {
   }
 };
 
+function galItemfromItem(item){
+    // TODO FACTOR ME OUT TO ONE FUNCTION, NOT COPY / PASTED EVERYWHERE
+    return {
+        src: item.primary_image,
+        thumbnail: item.primary_image,
+        thumbnailWidth: item.primary_image_width / 10,
+        thumbnailHeight: item.primary_image_height / 10,
+        caption: item.title,
+        id: item.id
+    }
+}
 class ObjectPage extends Component {
 
 	constructor(props) {
@@ -36,6 +48,7 @@ class ObjectPage extends Component {
                         language: "EN",
                         id: id,
 			item: {},
+                        items: [],
                         modalIsOpen: false,
                         loggedIn: false
 		}
@@ -47,8 +60,12 @@ class ObjectPage extends Component {
                 this.googleLogin = this.googleLogin.bind(this);
                 this.demoLogin = this.demoLogin.bind(this);
                 this.toggleLike = this.toggleLike.bind(this);
+                this.tileClick = this.tileClick.bind(this);
 
 	}
+    tileClick (index){
+        this.props.history.push('/object/'+this.state.items[index].id);
+    }
 
   googleLogin(data){
       var post_data = {
@@ -139,12 +156,14 @@ class ObjectPage extends Component {
                         user = result.user;
                     }
                     liked = result.liked;
+                    var items = result.artist_other_works + result.department_other_works;
 
                     this.setState({
                             isLoaded: true,
                             user: user,
                             liked: liked,
                             item: result,
+                            items: items,
                             id: this.state.id
                     });
                 },
@@ -208,13 +227,7 @@ class ObjectPage extends Component {
             </Modal>
           </div>
           <div className="Section-label">Related Works</div>
-          <div className="Staggered-grid">
-                <div className="Item-a">also by #artist</div>
-                <div className="Item-b"> more from #time period</div>
-                <div className="Item-b"> also by #artist</div>
-                <div className="Item-a"> from the same collector</div>
-          </div>
-                <div className="Item-c">in the #gallery</div>
+          <Gallery images={this.state.items} className="Gallery" onClickThumbnail={this.tileClick} />
         </header>
 
         <Fab/>
