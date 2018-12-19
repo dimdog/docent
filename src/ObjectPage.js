@@ -156,8 +156,12 @@ class ObjectPage extends Component {
                         user = result.user;
                     }
                     liked = result.liked;
-                    var items = result.artist_other_works + result.department_other_works;
-
+                    var unprocessed_items = result.artist_other_works.concat(result.department_other_works);
+                    var items = [];
+                    result.items.forEach(function(item){
+                        items.push(galItemfromItem(item));
+                    });
+                    console.log(items);
                     this.setState({
                             isLoaded: true,
                             user: user,
