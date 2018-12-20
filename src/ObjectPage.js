@@ -181,8 +181,9 @@ class ObjectPage extends Component {
                 }
             )
   }
-
   render() {
+    console.log(this.state.item);
+    var style = { backgroundImage: "url(" + this.state.item.primary_image + ")", height:this.state.item.primary_image_height || 9000};
     if (this.state.id_changed){
         this.componentDidMount();
     }
@@ -202,7 +203,7 @@ class ObjectPage extends Component {
         <div className="Grid-container">
         <NavBar parentState={this.state} />
 
-          <img src={this.state.item.primary_image} className="Primary-image" alt="primaryImage" />
+          <div className="Primary-image" style={style}  />
           <h1 className="Item-title">{this.getPropForLanguage('title')}</h1>
           <a className="Item-year" href = "#">{this.state.item.obj_date}</a>
           <a className="Item-medium">{this.getPropForLanguage('medium')}</a>
