@@ -183,7 +183,7 @@ class ObjectPage extends Component {
   }
   render() {
     console.log(this.state.item);
-    var style = { backgroundImage: "url(" + this.state.item.primary_image + ")", height:this.state.item.primary_image_height || 9000};
+    var style = { backgroundImage: "url(" + this.state.item.primary_image + ")"};
     if (this.state.id_changed){
         this.componentDidMount();
     }

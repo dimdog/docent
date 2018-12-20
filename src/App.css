@@ -135,10 +135,9 @@
 }
 
 .Primary-image {
-  grid-row: 2;
   grid-column: 1/span 4;
-  width:100%;
-  background-size: contain;
+  height: 600px;
+  background-size: auto 100%;
   background-attachment: fixed;
   background-position: 50% 70px;
   background-repeat: no-repeat;
