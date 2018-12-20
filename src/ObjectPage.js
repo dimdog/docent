@@ -5,7 +5,7 @@ import saved from './img/Saved.png';
 import GoogleLogin from 'react-google-login';
 import Modal from 'react-modal';
 import Met from './img/Met-logo.png';
-import {Link} from "react-router-dom";
+import {Link, Redirect} from "react-router-dom";
 import NavBar from './NavBar.js';
 import Fab from './fab.js';
 import SnackBar from './SnackBar.js';
@@ -50,7 +50,8 @@ class ObjectPage extends Component {
 			item: {},
                         items: [],
                         modalIsOpen: false,
-                        loggedIn: false
+                        loggedIn: false,
+                        redirect: false
 		}
                 this.getPropForLanguage = this.getPropForLanguage.bind(this);
                 this.changetoEn = this.changetoEn.bind(this);
@@ -64,7 +65,7 @@ class ObjectPage extends Component {
 
 	}
     tileClick (index){
-        this.props.history.push('/object/'+this.state.items[index].id);
+        this.setState({id_changed: true, id: this.state.items[index].id});
     }
 
   googleLogin(data){
@@ -168,7 +169,8 @@ class ObjectPage extends Component {
                             liked: liked,
                             item: result,
                             items: items,
-                            id: this.state.id
+                            id: this.state.id,
+                            id_changed:false
                     });
                 },
                 (error) => {
@@ -181,6 +183,9 @@ class ObjectPage extends Component {
   }
 
   render() {
+    if (this.state.id_changed){
+        this.componentDidMount();
+    }
     var save_button = this.openModal;
     var profile_img = <a className="Profile-img" width="50px"></a>;
     if (this.state.user != null){
