@@ -169,7 +169,7 @@ class ObjectPage extends Component {
                             user: user,
                             liked: liked,
                             item: result.item,
-                            repository: result.repository
+                            repository: result.repository,
                             items: items,
                             id: this.state.id,
                             id_changed:false
