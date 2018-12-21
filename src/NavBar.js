@@ -12,6 +12,11 @@ var repository_map = {
     2: Rijks,
     3: CalAcademy
 };
+var repository_color_map = {
+    1: "#E4002B",
+    2: "#FFFFFF",
+    3: "#F27134"
+}
 
 class NavBar extends Component {
     constructor(props) {
@@ -38,9 +43,14 @@ class NavBar extends Component {
       if (this.props.parentState && this.props.parentState.user != null){
          profile_img = <Link to="/mysaves" className="Signed-in"><img src={this.props.parentState.user.image_url} className="Profile-img" width="50px"></img></Link>;
       }
+      if (this.props.parentState.repository){
+          var styling = {backgroundColor: repository_color_map[this.props.parentState.repository.id]};
+      } else {
+          var styling = {};
+      }
       return (
 
-          <div className="NavBar">
+          <div className="NavBar" style={styling}>
               <Link to={this.highlightsUrl()} className="Highlights-button"><img src={this.setMuseum()} width="40px" alt="Met-logo"></img></Link>
               <div className="App-title">Virtual Docent</div>
               {profile_img}
