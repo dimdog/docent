@@ -190,6 +190,12 @@ class ObjectPage extends Component {
   render() {
     console.log(this.state.item);
     var style = { backgroundImage: "url(" + this.state.item.primary_image + ")"};
+    var primary_image = <div className="Primary-image" style={style}  />;
+    var sfurl = "";
+    if (this.state.item.media_type && this.state.item.media_type === "sketchfab"){
+        var sfurl = "https://sketchfab.com/models/"+this.state.item.api_id+"/embed"
+        primary_image = <div className="sketchfab-embed-wrapper" ><iframe className="Primary-image-3d" width="640" height="480" src={sfurl} frameborder="0" allow="autoplay; fullscreen; vr" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe></div>
+    }
     if (this.state.id_changed){
         this.componentDidMount();
     }
@@ -208,8 +214,7 @@ class ObjectPage extends Component {
 
         <div className="Grid-container">
         <NavBar parentState={this.state} />
-
-          <div className="Primary-image" style={style}  />
+          {primary_image}
           <h1 className="Item-title">{this.getPropForLanguage('title')}</h1>
           <a className="Item-year" href = "#">{this.state.item.obj_date}</a>
           <a className="Item-medium">{this.getPropForLanguage('medium')}</a>
