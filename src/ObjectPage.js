@@ -68,6 +68,10 @@ class ObjectPage extends Component {
     tileClick (index){
         this.props.history.push('/object/'+this.state.items[index].id); // update url bar
         this.setState({id_changed: true, id: this.state.items[index].id}); // update everything else
+        window.scrollTo({
+            top:0,
+            behavior: "smooth"
+        })
     }
 
   googleLogin(data){
