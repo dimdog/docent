@@ -4,6 +4,7 @@ import Met from './img/Met-logo.png';
 import {Link} from "react-router-dom";
 import NavBar from './NavBar.js';
 import Fab from './fab.js';
+import queryString from "query-string";
 
 
 function galItemfromItem(item){
@@ -30,7 +31,9 @@ class Highlights extends Component {
             this.tileClick = this.tileClick.bind(this);
     }
     componentDidMount() {
-        fetch("https://docentapp.com/api")
+        var qs = queryString.parse(this.props.location.search);
+        var repository_id = qs.repository || 2;
+        fetch("https://docentapp.com/api?repository="+repository_id)
             .then(res => res.json())
                 .then(
                     (result) => {

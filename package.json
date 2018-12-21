@@ -14,7 +14,8 @@
     "react-google-login": "4.0.0",
     "react-modal": "3.6.1",
     "universal-cookie": "3.0.6",
-    "react-https-redirect": "1.0.11"
+    "react-https-redirect": "1.0.11",
+    "query-string": "6.2.0"
   },
   "scripts": {
     "start": "export HTTPS=true&&react-scripts start",
