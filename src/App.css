@@ -144,6 +144,7 @@
 }
 .Primary-image-3d {
   grid-column: 1/span 4;
+  top: 70px;
 }
 
 
