@@ -12,13 +12,12 @@ var repository_map = {
 class NavBar extends Component {
     constructor(props) {
         super(props);
-        this.state = {repository: this.props.repository || {}};
         this.setMuseum = this.setMuseum.bind(this)
     }
     setMuseum(){
         var repository_id = 2;
-        if (this.state.repository){
-            repository_id = this.state.repository.id;
+        if (this.props.parentState.repository){
+            repository_id = this.props.parentState.repository.id;
         }
         // set color of navbar here too!
         return repository_map[repository_id];
