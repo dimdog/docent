@@ -49,6 +49,7 @@ class ObjectPage extends Component {
                         id: id,
 			item: {},
                         items: [],
+                        repository: [],
                         modalIsOpen: false,
                         loggedIn: false,
                         redirect: false
@@ -157,18 +158,18 @@ class ObjectPage extends Component {
                     if (result.user){
                         user = result.user;
                     }
-                    liked = result.liked;
+                    liked = result.item.liked;
                     var unprocessed_items = result.artist_other_works.concat(result.department_other_works);
                     var items = [];
                     unprocessed_items.forEach(function(item){
                         items.push(galItemfromItem(item));
                     });
-                    console.log(items);
                     this.setState({
                             isLoaded: true,
                             user: user,
                             liked: liked,
-                            item: result,
+                            item: result.item,
+                            repository: result.repository
                             items: items,
                             id: this.state.id,
                             id_changed:false

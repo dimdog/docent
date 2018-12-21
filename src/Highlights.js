@@ -44,7 +44,8 @@ class Highlights extends Component {
                         this.setState({
                                 isLoaded: true,
                                 items: items,
-                                user: result.user
+                                user: result.user,
+                                repository: result.repository
                         });
                     },
                     (error) => {
