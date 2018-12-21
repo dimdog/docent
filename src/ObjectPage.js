@@ -193,7 +193,7 @@ class ObjectPage extends Component {
     var primary_image = <div className="Primary-image" style={style}  />;
     var sfurl = "";
     if (this.state.item.media_type && this.state.item.media_type === "sketchfab"){
-        var sfurl = "https://sketchfab.com/models/"+this.state.item.api_id+"/embed"
+        var sfurl = "https://sketchfab.com/models/"+this.state.item.api_id+"/embed?autostart=1"
         primary_image = <div className="sketchfab-embed-wrapper" ><iframe className="Primary-image-3d" width={window.innerWidth} height="480" src={sfurl} frameborder="0" allow="autoplay; fullscreen; vr" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe></div>
     }
     if (this.state.id_changed){
