@@ -1,12 +1,16 @@
 import React, { Component } from 'react';
-import Met from './img/Met-logo.png';
-import Rijks from './img/rijksmuseum-logo.png';
+import Met from './img/Icon_Met.png';
+import Rijks from './img/Icon_Rijks.png';
+import CalAcademy from './img/Icon_CalAcademy.png';
+import RISD from './img/Icon_RISD.png';
+import Glasshouse from './img/Icon_Glasshouse.png';
 import {Link} from "react-router-dom";
 
 
 var repository_map = {
     1: Met,
-    2: Rijks
+    2: Rijks,
+    3: CalAcademy
 };
 
 class NavBar extends Component {
