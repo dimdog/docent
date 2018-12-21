@@ -13,9 +13,16 @@ class NavBar extends Component {
     constructor(props) {
         super(props);
         this.setMuseum = this.setMuseum.bind(this)
+        this.highlightsUrl = this.highlightsUrl.bind(this);
+    }
+    highlightsUrl(){
+        if (this.props.parentState.repository){
+            return "/highlights?repository="+this.props.parentState.repository.id;
+        }
+        return "/highlights";
     }
     setMuseum(){
-        var repository_id = 2;
+        var repository_id = 2; // TODO 2 is the default
         if (this.props.parentState.repository){
             repository_id = this.props.parentState.repository.id;
         }
@@ -30,7 +37,7 @@ class NavBar extends Component {
       return (
 
           <div className="NavBar">
-              <Link to="/highlights" className="Highlights-button"><img src={this.setMuseum()} width="40px" alt="Met-logo"></img></Link>
+              <Link to={this.highlightsUrl()} className="Highlights-button"><img src={this.setMuseum()} width="40px" alt="Met-logo"></img></Link>
               <div className="App-title">Virtual Docent</div>
               {profile_img}
           </div>
