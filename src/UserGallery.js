@@ -50,13 +50,14 @@ class UserGallery extends Component {
             this.content = <div />
     }
     componentDidMount() {
+        var that = this;
         fetch("https://docentapp.com/api/gallery")
             .then(res => res.json())
                 .then(
                     (result) => {
                         var rows = [];
                         result.repositories.forEach(function(repository){
-                            rows.push(templateRow(repository, this.tileClick));
+                            rows.push(templateRow(repository, that.tileClick));
                         });
                         this.content = rows;
                         this.setState({
