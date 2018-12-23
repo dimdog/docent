@@ -526,7 +526,7 @@ a:hover, a:visited{
 
 }
 
-.Met-bkg, .Rijks-bkg{
+.gallery-header{
   z-index: 0;
   background-clip: border-box;
   width: 100%;
