@@ -5,6 +5,7 @@ import Highlights from './Highlights.js';
 import ObjectPage from './ObjectPage.js';
 import {Welcome, CameraPage} from './Welcome.js';
 import MySaves from './MySaves.js';
+import Random from './Random.js';
 import HttpsRedirect from 'react-https-redirect';
 
 
@@ -17,6 +18,7 @@ const AppRouter = () => (
           <Route path="/highlights/" component={Highlights} />
           <Route path="/object/:id" component={ObjectPage} />
           <Route path="/mysaves" component={MySaves} />
+          <Route path="/random" component={Random} />
             </div>
       </Router>
   </HttpsRedirect>

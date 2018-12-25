@@ -153,10 +153,6 @@ class ObjectPage extends Component {
         .then(res => res.json())
             .then(
                 (result) => {
-                    window.scrollTo({
-                        top:0,
-                        behavior: "smooth"
-                    })
                     var user = null;
                     var liked = false;
                     if (result.user){
@@ -178,6 +174,10 @@ class ObjectPage extends Component {
                             id: this.state.id,
                             id_changed:false
                     });
+                    window.scrollTo({
+                        top:0,
+                        behavior: "smooth"
+                    })
                 },
                 (error) => {
                     this.setState({
