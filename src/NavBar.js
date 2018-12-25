@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { slide as Menu } from 'react-burger-menu';
+import Menu from 'react-burger-menu/lib/menus/slide';
 import Logo from './img/logo_Wide_1Color.png';
 import Met from './img/Icon_Met.png';
 import Rijks from './img/Icon_Rijks.png';
