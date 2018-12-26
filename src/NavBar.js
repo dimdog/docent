@@ -49,9 +49,9 @@ class NavBar extends Component {
         this.setState({menu_open: false});
     }
     render() {
-      var profile_img = <div></div>;
+      var profile_img = <div className="menu-user-spacing"></div>;
       if (this.props.parentState && this.props.parentState.user != null){
-         profile_img = <a href="#" onClick={this.setMenuOpen} className="Signed-in"><img src={this.props.parentState.user.image_url} className="Profile-img" width="50px"></img></a>;
+         profile_img = <div className="menu-user-spacing"><a href="#" onClick={this.setMenuOpen} className="Signed-in"><img src={this.props.parentState.user.image_url} className="Profile-img" width="50px"></img></a></div>;
       }
       if (this.props.parentState.repository){
           var styling = {backgroundColor: repository_color_map[this.props.parentState.repository.id]};
@@ -64,7 +64,7 @@ class NavBar extends Component {
               <Menu right isOpen={this.state.menu_open}>
               <div className="menu-top-section">
                   {profile_img}
-                  <div className="menu-hello-user"> Hello Alicia! </div>
+                  <div className="menu-hello-user"> Hi Alicia, </div>
                   <div className="menu-hello-prompt"> What would you like to see today? </div>
                   <Link to="/mysaves" className="menu-item">Saved Artwork</Link>
                   <Link to="/" className="menu-item">All Museums</Link>

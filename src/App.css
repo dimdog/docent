@@ -622,3 +622,23 @@ footer{
     from {bottom: 30px; opacity: 1;}
     to {bottom: 0; opacity: 0;}
 }
+
+.bm-burger-button {
+    position: fixed;
+    width: 37px;
+    height: 37px;
+    left: 97%;
+    top: 18px;
+}
+.bm-burger-bars {
+    background: #373a47;
+}
+.bm-menu {
+    background: #FAFAFA;
+}
+.menu-hello-user {
+    color: #D57980;
+}
+.menu-user-spacing {
+    height: 250px;
+}
