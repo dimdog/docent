@@ -429,17 +429,28 @@ a:hover, a:visited{
 
 }
 
+.profile_img{
+  width: 45px;
+  height: 45px;
+  background-color: #FF6565;
+  border-radius: 25px;
+  position: absolute;
+  left: 20px;
+  top: 19px;
+}
+
 .menu-hello-user {
     color: #FF6565;
     font-size: 23px;
     font-weight: bolder;
-    padding-left: 22px;
+    padding-left: 20px;
+    padding-top: 200px;
 }
 
 .menu-hello-prompt{
   padding-top: 16px;
   padding-bottom: 68px;
-  padding-left: 24px;
+  padding-left: 20px;
   width: 218px;
   font-size: 22px;
   font-weight: bolder;
@@ -450,7 +461,7 @@ a:hover, a:visited{
   grid-column: 1;
   padding-left: 24px;
   font-weight:520;
-  font-size: 13px;
+  font-size: 15px;
 }
 
 .menu-item{
@@ -459,15 +470,15 @@ a:hover, a:visited{
 }
 .menu-signout{
   padding-top: 40px;
-  color: #9B9B9B
+  
 }
 
 .menu-footer{
   background-color: #f2f2f2;
-  height: 43px;
+  height: 45px;
   position: absolute;
   width: 100%;
-  bottom: 10px;
+  bottom: 0px;
 }
 
 .menu-madeby-text{
@@ -709,8 +720,4 @@ footer{
 }
 .bm-menu {
     background: #FAFAFA;
-}
-
-.menu-user-spacing {
-    height: 200px;
 }
