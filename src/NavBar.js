@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
 import Menu from 'react-burger-menu/lib/menus/slide';
-import Logo from './img/logo_Wide_1Color.png';
+import Logo from './img/logo_Wide_1Color_light.png';
 import Met from './img/Icon_Met.png';
 import Rijks from './img/Icon_Rijks.png';
 import CalAcademy from './img/Icon_CalAcademy.png';
 import RISD from './img/Icon_RISD.png';
 import Glasshouse from './img/Icon_Glasshouse.png';
 import {Link} from "react-router-dom";
+import Hamburger from './img/baseline-menu-24px.png';
+import Close from './img/baseline-close-24px.png';
 
 
 var repository_map = {
@@ -60,19 +62,22 @@ class NavBar extends Component {
       }
       return (
 
-          <div>
+          <div className="Menu-drawer">
               <Menu right isOpen={this.state.menu_open}>
-              <div className="menu-top-section">
+
                   {profile_img}
+                  <div className="close">close</div>
                   <div className="menu-hello-user"> Hi Alicia, </div>
                   <div className="menu-hello-prompt"> What would you like to see today? </div>
-                  <Link to="/mysaves" className="menu-item">Saved Artwork</Link>
-                  <Link to="/" className="menu-item">All Museums</Link>
-                  <Link to="/random" className="menu-item">Surprise Me!</Link>
-                  <a href="#" className="menu-item menu-signout">Sign out</a>
-              </div>
+
+                  <div className="menu-item"><Link to="/mysaves" >Saved Artworks</Link></div>
+                  <div className="menu-item"><Link to="/">Museums</Link></div>
+                  <div className="menu-item"><Link to="/random">Surprise Me! 🎉</Link></div>
+
+                  <div className="menu-signout"><a href="#" >Sign out</a></div>
+
               <div className="menu-footer">
-                  <div className="menu-madeby-text">Made by Docent</div>
+                  <div className="menu-madeby-text">Made by</div>
                   <img src={Logo} className="menu-madeby-logo"></img>
               </div>
               </Menu>
@@ -80,6 +85,7 @@ class NavBar extends Component {
                   <Link to={this.highlightsUrl()} className="Highlights-button"><img src={this.setMuseum()} width="40px" alt="Met-logo"></img></Link>
                   <div className="App-title">Virtual Docent</div>
                   {profile_img}
+                  <div className="Hamburger" src={Hamburger}></div>
               </div>
           </div>
       );
