@@ -424,14 +424,14 @@ a:hover, a:visited{
 
 .close{
   position: absolute;
-  top: 24px;
-  right: 24px;
+  top: 30px;
+  right: 25px;
 
 }
 
 .profile_img{
-  width: 45px;
-  height: 45px;
+  width: 40px;
+  height: 40px;
   background-color: #FF6565;
   border-radius: 25px;
   position: absolute;
@@ -475,7 +475,7 @@ a:hover, a:visited{
 
 .menu-footer{
   background-color: #f2f2f2;
-  height: 45px;
+  height: 50px;
   position: absolute;
   width: 100%;
   bottom: 0px;
@@ -488,14 +488,14 @@ a:hover, a:visited{
   color: #9B9B9B;
   font-size: 12px;
   padding-left: 16px;
-  padding-top: 16px;
+  padding-top: 15px;
 }
 
 .menu-madeby-logo{
   height: 28px;
   position: fixed;
   right: 10px;
-  bottom: 8px;
+  bottom: 6px;
 
 }
 

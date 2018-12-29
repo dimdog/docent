@@ -65,7 +65,7 @@ class NavBar extends Component {
           <div className="Menu-drawer">
               <Menu right isOpen={this.state.menu_open}>
                   <div className="profile_img">{profile_img}</div>
-                  <div className="close">close</div>
+                  <div className="close" ><a href="/"><img src={Close} width="16px"></img></a></div>
                   <div className="menu-hello-user"> Hi Alicia, </div>
                   <div className="menu-hello-prompt"> What would you like to see today? </div>
 
