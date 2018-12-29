@@ -83,8 +83,7 @@ class NavBar extends Component {
               <div className="NavBar" style={styling}>
                   <Link to={this.highlightsUrl()} className="Highlights-button"><img src={this.setMuseum()} width="40px" alt="Met-logo"></img></Link>
                   <div className="App-title">Virtual Docent</div>
-                  {profile_img}
-                  <div className="Hamburger" src={Hamburger}></div>
+                  <div className="Hamburger"><a href={profile_img}><img src={Hamburger} width="16px"></img></a></div>
               </div>
           </div>
       );
