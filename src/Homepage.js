@@ -58,7 +58,7 @@ class Homepage extends Component {
     render() {
         var header = (
                 <div className="homepage-header">
-                    <img className="homepage-logo" src={DocentLogo}></img>
+                    <img className="homepage-logo" src={DocentLogo} height="56px"></img>
                     <div className="homepage-header-list">
                         <a onClick={this.setAbout} href="#" className="homepage-header-option"> About </a>
                         <a onClick={this.setCasestudy} href="#" className="homepage-header-option"> Case Studies </a>
@@ -67,14 +67,15 @@ class Homepage extends Component {
         var about_panel = (
                 <div className="homepage-about">
                     <div className="homepage-about-leftpanel">
-                        <p> sbj: a modern museum experience. </p>
-                        <p> Hello ^art World, </p>
+                        <div className="sbj"> sbj: a modern museum experience.</div>
+                        <div className="art-callout">art</div>
+                        <p> Hello ^World, </p>
                         <p> We wanted to create a new platform which increases the reflection, enrichment, and engagement when visiting an artspace.
                         We're just starting to bring collections online, but feel free to enjoy some of our case study museums.
-                        Interested in docent for your collection? Just <a href="#"> contact us </a> </p>
-                        <p> Thanks </p>
-                        <p> Ben, Alicia, and Andy </p>
-                        <p> (team docent) </p>
+                        Interested in docent for your collection? Just <a href="#"> contact us. </a> </p>
+                        <p> Thanks, </p>
+                        <div className="signiture-line"> Ben, Alicia, and Andy </div>
+                        <div className="signiture-subline"> (team docent) </div>
                     </div>
                     <div className="homepage-about-rightpanel">
                     </div>
