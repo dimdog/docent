@@ -57,7 +57,9 @@ class UserGallery extends Component {
                     (result) => {
                         var rows = [];
                         result.repositories.forEach(function(repository){
-                            rows.push(templateRow(repository, that.tileClick));
+                            if (repository.items.length > 0) {
+                                rows.push(templateRow(repository, that.tileClick));
+                            }
                         });
                         this.content = rows;
                         this.setState({
