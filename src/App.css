@@ -71,6 +71,7 @@
 .App-title{
   position: fixed;
   padding-left: 100px;
+  top: 15px;
   text-align: left;
   font-family: sans-serif;
   text-align: left;
@@ -711,4 +712,9 @@ footer{
 
 .bm-menu {
     background: #FAFAFA;
+}
+
+.Highlight-button {
+    padding: 5px 0px 0px 5px;
+    width: 40px;
 }

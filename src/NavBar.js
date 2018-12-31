@@ -61,30 +61,31 @@ class NavBar extends Component {
           var styling = {};
       }
       return (
+            <div>
+              <div className="Menu-drawer">
+                  <Menu right isOpen={this.state.menu_open}>
+                      <div className="profile_img">{profile_img}</div>
+                      <div className="close" ><a href="#" onClick={this.setMenuClosed} ><img src={Close} width="16px"></img></a></div>
+                      <div className="menu-hello-user"> Hi Alicia, </div>
+                      <div className="menu-hello-prompt"> What would you like to see today? </div>
 
-          <div className="Menu-drawer">
-              <Menu right isOpen={this.state.menu_open}>
-                  <div className="profile_img">{profile_img}</div>
-                  <div className="close" ><a href="/"><img src={Close} width="16px"></img></a></div>
-                  <div className="menu-hello-user"> Hi Alicia, </div>
-                  <div className="menu-hello-prompt"> What would you like to see today? </div>
+                      <div className="menu-item"><Link to="/mysaves" >Saved Artworks</Link></div>
+                      <div className="menu-item"><Link to="/">Museums</Link></div>
+                      <div className="menu-item"><Link to="/random">Surprise Me! 🎉</Link></div>
 
-                  <div className="menu-item"><Link to="/mysaves" >Saved Artworks</Link></div>
-                  <div className="menu-item"><Link to="/">Museums</Link></div>
-                  <div className="menu-item"><Link to="/random">Surprise Me! 🎉</Link></div>
+                      <div className="menu-signout"><a href="#" >Sign out</a></div>
 
-                  <div className="menu-signout"><a href="#" >Sign out</a></div>
-
-              <div className="menu-footer">
-                  <div className="menu-madeby-text">Made by</div>
-                  <img src={Logo} className="menu-madeby-logo"></img>
+                  <div className="menu-footer">
+                      <div className="menu-madeby-text">Made by</div>
+                      <img src={Logo} className="menu-madeby-logo"></img>
+                  </div>
+                  </Menu>
               </div>
-              </Menu>
-              <div className="NavBar" style={styling}>
-                  <Link to={this.highlightsUrl()} className="Highlights-button"><img src={this.setMuseum()} width="40px" alt="Met-logo"></img></Link>
-                  <div className="App-title">Virtual Docent</div>
-                  <div className="Hamburger"><a href={profile_img}><img src={Hamburger} width="16px"></img></a></div>
-              </div>
+                  <div className="NavBar" style={styling}>
+                      <Link to={this.highlightsUrl()}><img className="Highlight-button" src={this.setMuseum()} alt="logo"></img></Link>
+                      <div className="App-title">Virtual Docent</div>
+                      <div className="Hamburger"><a href={profile_img}><img src={Hamburger} width="16px"></img></a></div>
+                  </div>
           </div>
       );
     }
