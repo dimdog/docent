@@ -74,8 +74,8 @@ class Homepage extends Component {
                         We're just starting to bring collections online, but feel free to enjoy some of our case study museums.
                         Interested in docent for your collection? Just <a href="#"> contact us. </a> </p>
                         <p> Thanks, </p>
-                        <div className="signiture-line"> Ben, Alicia, and Andy </div>
-                        <div className="signiture-subline"> (team docent) </div>
+                        <div className="signature-line"> Ben, Alicia, and Andy </div>
+                        <div className="signature-subline"> (team docent) </div>
                     </div>
                     <div className="homepage-about-rightpanel">
                     </div>
@@ -85,7 +85,7 @@ class Homepage extends Component {
                     <div className="homepage-case-title">
                         <p> Explore some of our case study museums </p>
                     </div>
-                    <Gallery images={repositories} className="Gallery" onClickThumbnail={this.tileClick} />
+                    <Gallery id="museum-gallery" images={repositories}  onClickThumbnail={this.tileClick} />
                     <div className="homepage-case-curious">
                         <p> Curious about how docent can modernize your collection? <a href="#"> Just contact us </a></p>
                     </div>
